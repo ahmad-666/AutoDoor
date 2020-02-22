@@ -1,0 +1,103 @@
+@import '../../variables.scss' ;
+@import '../../mixins.scss' ;
+@import '../../colors.scss' ; 
+header{
+    width: 100%;
+    height: auto;
+}
+#topMenu{
+    width: 100%;
+    height: auto;
+    padding: $dist1 $dist2;
+    background-color: $primaryColor;
+    display: flex;
+    @include flex(row,space-between,center,nowrap,"") ;
+    .right,.left{
+        width: auto;
+        height: auto;
+        display: flex;
+        @include flex(row,flex-start,center,nowrap,"") ;
+        a{
+            width: auto;
+            height: auto;
+            display: flex;
+            @include flex(column,flex-start,center,nowrap,"") ;
+            color: $textWhite;
+            &:not(:first-child){margin-right: $dist3 + 1em ;}
+            &:not(.logo){
+                transition: all .2s linear;
+            }   
+            &:not(.logo):not(.withBorder){
+                &:hover{
+                    padding-bottom: .5em;
+                    border-bottom: 1px solid white;
+                }
+            }   
+            p{
+                font-size: $fontM;
+                margin-top: .2em;
+            }
+            i{font-size: $fontM - .2em;}
+        }
+        a.logo{
+            @include flex(row,flex-start,center,nowrap,"") ;
+            img{
+                width: 12em;
+                height: 4em;
+            }
+            p{
+                margin-top: 0;
+                margin-right: .3em;
+            }
+        }
+        a.badge{
+            position: relative;
+            .badge{
+                width: .6em;
+                height: .6em;
+                border-radius: 50%;
+                background-color: #f44336 ;
+                position: absolute;
+                top: 0em;
+                right: .7em;    
+            }
+        }
+        a.withBorder{
+            @include flex(row,flex-start,center,nowrap,"") ;
+            padding: .6em $dist3 ;
+            border: 1px solid $textWhite;
+            border-radius: $dist2;
+            &:hover{
+                background-color: white;
+                color: $primaryColor;
+            }
+            p{
+                margin-top: 0;
+                margin-right: .2em;
+            }
+        }
+    }
+    .left{
+        margin-right: $dist3;
+    }
+    #mobileMenu{
+        display: none;
+        
+    }
+}
+@include resizeTablet('#topMenu') ;
+@include mediaQ(750px){
+    #topMenu{
+        .right,.left{
+            a{
+                &:not(.logo):not(#mobileMenu){
+                    display: none;
+                }
+            }
+        }
+        #mobileMenu{
+            display: block;
+        }
+    }
+    
+}
