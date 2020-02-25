@@ -595,32 +595,32 @@ form {
             border-radius: $dist3;
             border: 1.2px solid lighten($textGrey, 25%);
             transition: all .2s linear;
-
             &::placeholder {
                 font-size: 1em;
                 color: lighten($textGrey, 18%);
             }
-
             &:focus {
                 border: 1.2px solid $primaryColor;
             }
         }
-
         input.error {
             border: 1.2px solid lighten($redColor2, 5%);
         }
-
         button[type="submit"] {
-            width: auto;
-            height: calc(100%);
-            line-height: 2.5em;
+            width: 4em;
+            height: 100% ;
             border-top-left-radius: $dist3;
             border-bottom-left-radius: $dist3;
-            padding: 0 $dist1 + .2em;
             position: absolute;
             left: 0em;
             top: 0em;
-            @include swapColor($textWhite,$primaryColor) ;
+            @include swapColor($primaryColor,white) ;
+            border-right: 2px solid $primaryColor;
+            display: flex;
+            @include flex(row,center,center,nowrap,"") ;
+            i{
+                font-size: $fontM - .1em;
+            }
         }
         .msg {
             opacity: 0;

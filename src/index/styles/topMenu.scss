@@ -9,9 +9,10 @@ header{
     width: 100%;
     height: auto;
     padding: $dist1 $dist2;
-    background-color: $primaryColor;
+    background-color: #eceff1  ;
     display: flex;
     @include flex(row,space-between,center,nowrap,"") ;
+    // box-shadow: 0 .5em 1em .1em $shadowColor;
     .right,.left{
         width: auto;
         height: auto;
@@ -22,7 +23,7 @@ header{
             height: auto;
             display: flex;
             @include flex(column,flex-start,center,nowrap,"") ;
-            color: $textWhite;
+            color: $primaryColor;
             &:not(:first-child){margin-right: $dist3 + 1em ;}
             &:not(.logo){
                 transition: all .2s linear;
@@ -30,7 +31,7 @@ header{
             &:not(.logo):not(.withBorder){
                 &:hover{
                     padding-bottom: .5em;
-                    border-bottom: 1px solid white;
+                    border-bottom: 1px solid $primaryColor;
                 }
             }   
             p{
@@ -65,11 +66,11 @@ header{
         a.withBorder{
             @include flex(row,flex-start,center,nowrap,"") ;
             padding: .6em $dist3 ;
-            border: 1px solid $textWhite;
+            border: 1px solid $primaryColor;
             border-radius: $dist2;
             &:hover{
-                background-color: white;
-                color: $primaryColor;
+                background-color: $primaryColor;
+                color: white;
             }
             p{
                 margin-top: 0;
@@ -82,7 +83,65 @@ header{
     }
     #mobileMenu{
         display: none;
-        
+        position: relative;
+        width: auto;
+        height: 100%;
+        margin-right: $dist2;
+        .fa-bars{
+            width: auto;
+            height: 100%;
+            &::before{
+                position: relative;
+                top: 50%;
+                right: 50%;
+                transform: translate(50%,-50%);
+                font-size: $fontXL;
+                color: $primaryColor;
+                cursor: pointer;
+            }
+        }
+        ul{
+            visibility: hidden;
+            opacity: 0;
+            transition: all .3s linear;
+            width: 25em;
+            height: auto;
+            position: absolute;
+            top: calc(100% + 1.5em) ;
+            right: 0;
+            box-shadow: 0 .5em 1em .1em $shadowColor;
+            background-color: #eceff1;
+            li{
+                width: 100%;
+                height: auto;
+                &:not(:last-child){border-bottom: 1px solid $primaryColor;}
+                background-color: transparent;
+                color: $primaryColor;
+                transition: all .1s linear;
+                &:hover{
+                    background-color: $primaryColor;
+                    color: $textWhite;
+                }
+                a{
+                    width: 100%;
+                    height: auto;
+                    display: flex !important;
+                    @include flex(row,flex-start,center,nowrap,"") ;
+                    padding: $dist1;
+                    color: inherit;
+                    i,p{
+                        font-size: $fontM;
+                        color: inherit;
+                        &:nth-child(2){margin-right: .3em;}
+                    }
+                }
+               
+            }
+        }
+        ul.show{
+            opacity: 1;
+            visibility: visible;
+        }
     }
 }
 @include resizeTablet('#topMenu') ;

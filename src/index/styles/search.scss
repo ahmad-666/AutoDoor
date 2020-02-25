@@ -1,0 +1,104 @@
+@import '../../colors.scss' ;
+@import '../../mixins.scss' ;
+@import '../../variables.scss' ;
+#searchForm{
+    width: 100%;
+    height: auto;
+    background-color: $primaryColor;
+    padding: $dist2;
+    display: flex;
+    @include flex(row,flex-start,center,nowrap,"");
+    box-shadow: 0 .5em 1em .1em $shadowColor;
+    .productsWrapper{
+        flex-shrink: 0;
+        width: 12em;
+        height: 100%;
+        position: relative;
+        .title{
+            width: auto;
+            height: 100%;
+            display: flex;
+            @include flex(row,flex-start,center,nowrap,"") ;
+            cursor: pointer;
+            i,p{
+                font-size: $fontM;
+                color: $textWhite;
+                &:nth-child(2){margin-right: .3em;}
+            }
+        }
+        ul{
+            opacity: 0;
+            visibility: hidden;
+            transition: all .3s linear;
+            width: 25em;
+            height: auto;
+            box-shadow: 0 .5em 1em .1em $shadowColor;
+            background-color: $iceColor;
+            position: absolute;
+            right: 0;
+            top: calc(100% + 2.1em);
+            li{
+                width: 100%;
+                height: auto;
+                position: relative;
+                color: $primaryColor;
+                &:not(:last-child){border-bottom: 1px solid $primaryColor;}
+                // cursor: pointer;
+                &:hover{
+                    .menu{
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+                .name{
+                    width: 100%;
+                    height: auto;
+                    padding: $dist1;
+                    background-color: transparent;
+                    color: inherit;
+                    transition: all .1s linear;
+                    display: flex;
+                    @include flex(row,space-between,center,nowrap,"") ;
+                    &:hover{
+                        background-color: $primaryColor;
+                        color: $textWhite;
+                    }
+                    p,i{
+                        color: inherit;
+                        font-size: $fontM;             
+                    }
+                }
+                .menu{
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: all .2s linear;
+                    width: 30em;
+                    height: auto;
+                    background-color: $iceColor;
+                    box-shadow: -.2em 0 1em .1em $shadowColor;
+                    position: absolute;
+                    top: 0%;
+                    right: 101%;
+                    a{
+                        color: inherit;
+                        font-size: $fontM;
+                        margin: $dist2;
+                    }
+                }
+            }
+        }
+        ul.show{
+            opacity: 1;
+            visibility: visible;
+        }
+
+    }
+    .inputWrapper{
+        width: 60%;
+        height: 4em;
+        margin-right: $dist3;
+        input{
+            border: none;
+        }  
+    }
+}
