@@ -13,12 +13,60 @@
 .containerStyle{
     width: 90% ;
     height: auto;
-    margin: $sectionsDist auto 0 auto ;
+    margin: $dist3 auto 0 auto ;
     padding: $dist2  ;
-    background-color: $bgColor ;
-    box-shadow: 0 0 1em .01em $shadowColor ;
-    border-radius: $dist2 ;
-    // overflow: hidden;
+    // background-color: $bgColor ;
+    // box-shadow: 0 0 1em .01em $shadowColor ;
+    // border-radius: $dist2 ;
+    overflow: hidden;
+}
+.skewContainer{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    background-color: $primaryColor;
+    display: flex;
+    @include flex(row,space-between,stretch,nowrap,"") ;
+    .skew{
+        display: inline-block;
+        width: auto;
+        height: auto;
+        background-color: $textWhite;
+        &:first-child{
+            transform: skewX(-25deg) translateX(2em);
+            > * {
+                padding: .5em 1.5em .5em 1em ;
+                transform: skewX(25deg);
+            }
+        }
+        &:last-child:not(:first-child){
+            transform: skewX(25deg) translateX(-2em);
+            > * {
+                padding: .5em 1.5em .5em 2.5em ;
+                transform: skewX(-25deg);
+            }
+        }
+        > * {
+            display: inline-block;
+            width: auto;
+            height: 100%;
+        }
+        h4{
+            font-size: $fontL;
+            color: $primaryColor;
+            font-weight: 700;
+        }
+        a{
+            display: flex;
+            @include flex(row,flex-start,center,nowrap,"") ;
+            p,i{
+                font-size: $fontL;
+                font-weight: 700;
+                color: $primaryColor;
+                &:nth-child(2){margin-right: .2em;}
+            }
+        }
+    }
 }
 .zoom{
     // <div class="img zoom">

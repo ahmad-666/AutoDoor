@@ -2,9 +2,9 @@
 @import '../../colors.scss' ;
 @import '../../mixins.scss' ;
 .sliderFade{
-    width: 80% ;
+    // width: 80% ;
     height: 35em;
-    margin: $sectionsDist auto ;
+    // margin: $sectionsDist auto ;
     position: relative ;
     .slide{
         opacity: 0;
@@ -20,13 +20,14 @@
         visibility: visible ;
     }
     .arrow{
-        color: $textWhite ;
-        font-size: $fontXXL ;
         cursor: pointer;
         padding: $dist1 ;
         transition: all .2s linear ;
-        &:hover{
-            transform: translateY(-50%) scale(1.3) ;
+        &:hover{transform: translateY(-50%) scale(1.3) ;}
+        &::before{
+            color: $textWhite ;
+            font-size: $fontXXL ;
+          
         }
     }
     .arrow.prev{right: 0;}

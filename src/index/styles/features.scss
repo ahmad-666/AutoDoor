@@ -1,0 +1,45 @@
+@import '../../variables.scss' ;
+@import '../../mixins.scss' ;
+@import '../../colors.scss' ;
+#features{
+    overflow: visible;
+    .features{
+        width: 100%;
+        height: auto;
+        display: flex;
+        @include flex(row,flex-start,flex-start,nowrap,"") ;
+        margin-top: $dist2;
+        .feature{
+            width: 25%;
+            height: 22em;
+            &:not(:first-child){margin-right: 2em;}
+            padding: $dist2;
+            transition: all .3s linear;
+            background-color: $iceColor;
+            box-shadow: 0 .2em .5em .1em $shadowColor;
+            transform: perspective(100em) translateZ(0) ;
+            display: flex;
+            @include flex(column,flex-start,center,nowrap,"") ;
+            &:hover{
+                transform: perspective(100em) translateZ(5em) ;
+                box-shadow: 0 .8em 2em .5em $shadowColor;
+                z-index: 1;
+            }
+            img{
+                width: 8em;
+                height: 6em;
+            }
+            h6{
+                font-size: $fontL;
+                margin-top: $dist1;
+                color: $primaryColor;
+                font-weight: 700;
+            }
+            p{
+                margin-top: $dist1;
+                font-size: $fontM;
+                color: lighten($textDark,20%);
+            }
+        }
+    }
+}

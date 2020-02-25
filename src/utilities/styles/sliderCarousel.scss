@@ -2,19 +2,19 @@
 @import '../../colors.scss' ;
 @import '../../mixins.scss' ;
 .sliderCarousel{
-    width: 90% ;
+    // width: 90% ;
     height: auto;
-    padding: $dist2 0 ;
-    margin: $sectionsDist auto 0 auto ;
+    // padding: $dist2 0 ;
+    // margin: $sectionsDist auto 0 auto ;
     display: flex ;
     @include flex(column,flex-start,center,nowrap,"") ;
     position: relative ;
-    h4{
-        font-size: $fontL ;
-        color: $textDark; 
-        font-weight: 700 ;
-        margin-right: $dist1;
-    } 
+    // h4{
+    //     font-size: $fontL ;
+    //     color: $textDark; 
+    //     font-weight: 700 ;
+    //     margin-right: $dist1;
+    // } 
     .helper{
         width: 100% ;
         height: auto;
