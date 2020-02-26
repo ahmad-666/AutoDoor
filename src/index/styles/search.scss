@@ -29,7 +29,7 @@
         ul{
             opacity: 0;
             visibility: hidden;
-            transition: all .3s linear;
+            transition: all .15s linear;
             width: 25em;
             height: auto;
             box-shadow: 0 .5em 1em .1em $shadowColor;
@@ -90,6 +90,7 @@
         ul.show{
             opacity: 1;
             visibility: visible;
+            z-index: 1;
         }
 
     }
