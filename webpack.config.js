@@ -10,7 +10,24 @@ module.exports = {
         minimize: false //for minify .js files
     },
     entry: {
-        'index' : './src/index/index.js'
+        'index' : './src/index/index.js',
+        'about' : './src/about/about.js',
+        'agentRequest' : './src/agentRequest/agentRequest.js',
+        'agents' : './src/agents/agents.js',
+        'article' : './src/article/article.js',
+        'articles' : './src/articles/articles.js',
+        'basket' : './src/basket/basket.js',
+        'changePassword' : './src/changePassword/changePassword.js',
+        'faq' : './src/faq/faq.js',
+        'forgetPassword' : './src/forgetPassword/forgetPassword.js',
+        'login' : './src/login/login.js',
+        'orders' : './src/orders/orders.js',
+        'product' : './src/product/product.js',
+        'products' : './src/products/products.js',
+        'signup' : './src/signup/signup.js',
+        'special' : './src/special/special.js',
+        'support' : './src/support/support.js',
+        'userInfo' : './src/userInfo/userInfo.js'
     },
     output: {
         filename: '[name].js',
@@ -152,6 +169,108 @@ module.exports = {
             inject: true,
             chunks: ['index'],
             template: './src/index/index.html' 
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'about.html' , 
+            inject: true,
+            chunks: ['about'],
+            template: './src/about/about.html' 
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'agentRequest.html' , 
+            inject: true,
+            chunks: ['agentRequest'],
+            template: './src/agentRequest/agentRequest.html' 
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'agents.html' , 
+            inject: true,
+            chunks: ['agents'],
+            template: './src/agents/agents.html' 
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'article.html' , 
+            inject: true,
+            chunks: ['article'],
+            template: './src/article/article.html' 
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'articles.html' , 
+            inject: true,
+            chunks: ['articles'],
+            template: './src/articles/articles.html' 
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'basket.html' , 
+            inject: true,
+            chunks: ['basket'],
+            template: './src/basket/basket.html' 
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'changePassword.html' , 
+            inject: true,
+            chunks: ['changePassword'],
+            template: './src/changePassword/changePassword.html' 
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'faq.html' , 
+            inject: true,
+            chunks: ['faq'],
+            template: './src/faq/faq.html' 
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'forgetPassword.html' , 
+            inject: true,
+            chunks: ['forgetPassword'],
+            template: './src/forgetPassword/forgetPassword.html' 
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'login.html' , 
+            inject: true,
+            chunks: ['login'],
+            template: './src/login/login.html' 
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'orders.html' , 
+            inject: true,
+            chunks: ['orders'],
+            template: './src/orders/orders.html' 
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'product.html' , 
+            inject: true,
+            chunks: ['product'],
+            template: './src/product/product.html' 
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'products.html' , 
+            inject: true,
+            chunks: ['products'],
+            template: './src/products/products.html' 
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'signup.html' , 
+            inject: true,
+            chunks: ['signup'],
+            template: './src/signup/signup.html' 
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'special.html' , 
+            inject: true,
+            chunks: ['special'],
+            template: './src/special/special.html' 
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'support.html' , 
+            inject: true,
+            chunks: ['support'],
+            template: './src/support/support.html' 
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'userInfo.html' , 
+            inject: true,
+            chunks: ['userInfo'],
+            template: './src/userInfo/userInfo.html' 
         }),
         new CleanWebpackPlugin()
     ]

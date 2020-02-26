@@ -1,0 +1,130 @@
+@import '../../variables.scss' ;
+@import '../../mixins.scss' ;
+@import '../../colors.scss' ;
+footer{
+    width: 100%;
+    background-color: darken($darkBlue,10%);
+    padding: $dist2;
+    margin-top: $sectionsDist;
+    display: flex;
+    @include flex(column,flex-start,center,nowrap,"") ;
+    .row{
+        &:nth-child(1){
+            width: 100%;
+            height: auto;
+            display: flex;
+            @include flex(row,flex-start,flex-start,nowrap,"") ;
+            padding-bottom: $dist2;
+            border-bottom: 1px solid lighten($textGrey,15%);
+            .col{
+                max-width: 50%;
+                height: auto;
+                &:not(:first-child){margin-right: $dist4 * 2;}
+                .title{
+                    width: auto;
+                    height: auto;
+                    display: flex;
+                    @include flex(row,flex-start,center,nowrap,"") ;
+                    i,h6{
+                        font-size: $fontM;
+                        color: $textWhite;
+                        &:nth-child(2){margin-right: .3em;}
+                    }
+                    h6{
+                        font-weight: 700;
+                    }
+                }
+                .content{
+                    width: auto;
+                    height: auto;
+                    margin-top: $dist2;
+                    display: flex;
+                    @include flex(column,flex-start,flex-start,nowrap,"") ;
+                }
+                &:nth-child(1){
+                    .content{
+                        p{
+                            font-size: $fontM - .2em ;
+                            color: lighten($textGrey,15%);
+                            line-height: $dist2 + .3em;
+                        }
+                    }
+                }
+                &:nth-child(2),&:nth-child(3){
+                    .content{
+                        a{
+                            font-size: $fontM - .2em;
+                            color: darken($textWhite,15%);
+                            &:not(:first-child){margin-top: $dist1;}   
+                            &:hover{color: white;}
+                        }
+                        .withIcon{
+                            width: auto;
+                            height: auto;
+                            margin-top: $dist1;
+                            display: flex;
+                            @include flex(row,flex-start,center,nowrap,"") ;
+                            color: darken($textWhite,15%);
+                            i,p{
+                                font-size: $fontM - .2em;
+                                color: inherit;
+                                &:nth-child(2){margin-right: .4em;}
+                            }
+                        }                
+                    }
+                    .socials{
+                        width: auto;
+                        height: auto;
+                        display: flex;
+                        @include flex(row,flex-start,center,nowrap,"") ;
+                        margin-top: $dist2;
+                        a{
+                            width: auto;
+                            height: auto;
+                            &:not(:first-child){margin-right: $dist1;}
+                            i{
+                                width: 5em;
+                                height: 5em;
+                                border-radius: 50%;
+                                position: relative;
+                                @include swapColor($primaryColor,white) ;
+                                border: 3px solid $primaryColor;
+                                &:hover{
+                                    transform: scale(1.2);
+                                }
+                                &::before{
+                                    position: absolute;
+                                    top: 50%;
+                                    right: 50%;
+                                    transform: translate(50%,-50%);
+                                    font-size: $fontL;
+                                    color: inherit;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &:nth-child(2){
+            width: auto;
+            height: auto;
+            margin-top: $dist2;
+            display: flex;
+            @include flex(row,flex-start,center,nowrap,"") ;
+            a{
+                width: auto;
+                height: auto;
+                padding: $dist1;
+                border-radius: $dist1;
+                background-color: $textWhite;
+                &:not(:first-child){margin-right: $dist2;}
+                img{
+                    width: 8em;
+                    height: 8em;
+                }
+
+            }
+        }
+    }
+}
