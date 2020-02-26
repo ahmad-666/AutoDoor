@@ -15,7 +15,7 @@
             &:not(:first-child){margin-right: 2em;}
             padding: $dist2;
             transition: all .3s linear;
-            background-color: $iceColor;
+            background-color: white;
             box-shadow: 0 .2em .5em .1em $shadowColor;
             transform: perspective(100em) translateZ(0) ;
             display: flex;

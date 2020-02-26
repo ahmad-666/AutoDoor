@@ -9,7 +9,7 @@ header{
     width: 100%;
     height: auto;
     padding: $dist1 $dist2;
-    background-color: #eceff1  ;
+    background-color: white  ;
     display: flex;
     @include flex(row,space-between,center,nowrap,"") ;
     // box-shadow: 0 .5em 1em .1em $shadowColor;

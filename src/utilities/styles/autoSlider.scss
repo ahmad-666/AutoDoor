@@ -2,11 +2,8 @@
 @import '../../colors.scss' ;
 @import '../../mixins.scss' ;
 .autoSlider{
-    width: 80% ;
     height: auto;
     position: relative ;
-    margin: $sectionsDist auto ;
-    padding: $dist2 0 $dist4 + .5em 0 ;
     overflow: hidden;
     display: flex ;
     @include flex(column,flex-start,center,nowrap,"") ;

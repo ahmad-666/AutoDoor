@@ -9,15 +9,13 @@ import '../index/styles/slider.scss' ;
 import '../index/styles/categories.scss' ;
 import '../index/styles/features.scss' ;
 import '../index/styles/carousel.scss' ;
-import '../index/styles/services.scss' ;
-import '../index/styles/residents.scss' ;
+import '../index/styles/partners.scss' ;
 import '../index/styles/articles.scss' ;
-import '../index/styles/sponsers.scss' ;
 import '../index/styles/footer.scss' ;
 //load scripts
 import '../index/scripts/topMenu.js' ;
 import '../index/scripts/search.js' ;
 import '../index/scripts/slider.js' ;
 import '../index/scripts/carousel.js' ;
-import '../index/scripts/sponsers.js' ;
+import '../index/scripts/partners.js' ;
 //load videos
