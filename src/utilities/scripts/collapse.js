@@ -1,4 +1,4 @@
-function Collapse(wrapper,others,maxHeight){
+function Collapse(wrapper,others,maxHeight,cb){
     this.wrapper = wrapper ;
     this.others = others ;
     this.maxHeight = maxHeight ;
@@ -9,6 +9,7 @@ function Collapse(wrapper,others,maxHeight){
     if(!this.maxHeight) this.collapse.classList.add('close') ;
     else this.collapse.style.maxHeight = this.maxHeight ;
     this.trigger.addEventListener('click',this.toggleCollapse.bind(this)) ;
+    this.cb = cb ;
 }
 Collapse.prototype.toggleCollapse = function(e){
     e.stopPropagation();
@@ -25,11 +26,11 @@ Collapse.prototype.toggleCollapse = function(e){
             if(!this.maxHeight) collapse.style.height = `0px` ;          
             else collapse.style.maxHeight = this.maxHeight ;      
             collapse.classList.remove('open');
-            if(this.icon){
-                let icon = other.querySelector('.collapseIcon');
-                icon.classList.add('fa-plus') ;
-                icon.classList.remove('fa-times') ;
-            }    
+            // if(this.icon){
+            //     let icon = other.querySelector('.collapseIcon');
+            //     icon.classList.add('fa-plus') ;
+            //     icon.classList.remove('fa-times') ;
+            // }    
         });        
     }
     else {
@@ -42,10 +43,11 @@ Collapse.prototype.toggleCollapse = function(e){
             setTimeout(()=>this.collapse.style.maxHeight = this.maxHeight,10) ;  
         }
     }
-    if(this.icon){
-        this.icon.classList.toggle('fa-plus') ;
-        this.icon.classList.toggle('fa-times') ;
-    }
+    // if(this.icon){
+    //     this.icon.classList.toggle('fa-plus') ;
+    //     this.icon.classList.toggle('fa-times') ;
+    // }
+    if(this.cb) this.cb(this.collapse,this.icon,this.others) ;
 }
 //<#faq or parent of .collapse>.querySelectorAll('.withCollapse').forEach((withCollapse,i,all) => {
 //    all = [...all] ;

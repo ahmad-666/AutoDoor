@@ -1,0 +1,61 @@
+@import '../../colors.scss' ;
+@import '../../mixins.scss' ;
+@import '../../variables.scss' ;
+@import '../../utilities/styles/collapse.scss' ;
+#faq{
+    .question{
+        width: 100%;
+        height: auto;
+        margin-top: $dist2;
+        box-shadow: 0 0 .5em .1em $shadowColor;
+        border-radius: $dist1;
+        padding-bottom: 0;
+        overflow: hidden;
+        .title{
+            width: 100%;
+            height: auto;
+            padding: $dist2;
+            background-color: white;
+            display: flex;
+            @include flex(row,space-between,center,nowrap,"") ;
+            h6{
+                width: 100%;
+                font-size: $fontL;
+                font-weight: 700;
+                color: $primaryColor;
+            }
+            .collapseTrigger{
+                flex-shrink: 0;
+                margin-right: $dist2;
+                width: 4em;
+                height: 4em;
+                border-radius: 50%;
+                @include swapColor(white,$greenColor) ;
+                position: relative;
+                cursor: pointer;
+                &::before{
+                    font-size: $fontL;
+                    color: inherit;
+                    position: absolute;
+                    top: 50%;
+                    right: 50%;
+                    transform: translate(50%,-50%);
+                }
+            }
+        }
+        .answer{
+            width: 100%;
+            background-color: darken(white,7%);
+            p{
+                width: 100%;
+                height: auto;
+                color: $primaryColor;
+                line-height: $dist2 + .5em;
+                font-size: $fontM;
+            }
+        }    
+        .answer.after{
+            padding: $dist2;
+        }
+    }
+}

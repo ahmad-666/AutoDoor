@@ -1,0 +1,98 @@
+@import '../../variables.scss' ;
+@import '../../mixins.scss' ;
+@import '../../colors.scss' ;
+#support{
+    width: 35em;
+    height: auto;
+    overflow: hidden;
+    margin: $sectionsDist auto;
+    display: flex;
+    @include flex(column,flex-start,center,nowrap,"") ;
+    border-radius: $dist2;
+    box-shadow: 0 .5em 1em .2em $shadowColor;
+    background-color: white;
+    img{
+        width: 100%;
+        height: 25em;
+    }
+    form#supportForm{
+        width: 100%;
+        height: auto;
+        padding: $dist1;
+        display: flex;
+        @include flex(column,flex-start,center,nowrap,"") ;
+        h6{
+            font-size: $fontL;
+            font-weight: 700;
+            color: $primaryColor;
+        }
+        .inputWrapper.text{
+            width: 100%;
+            height: 4em;
+            margin-top: $dist2 + 1em;
+        }
+        .inputWrapper.textarea{
+            width: 100%;
+            margin-top: $dist2 + 1em;
+            textarea.style1{height: 15em;}
+        }
+        button[type="submit"]{
+            margin-top: $dist2;
+            @include swapColor(white,$primaryColor) ;
+        }
+    }
+    .contact{
+        margin-top: $dist2;
+        border-top: 1px solid lighten($textGrey,15%);
+        width: 100%;
+        height: auto;
+        padding: $dist1;
+        display: flex;
+        @include flex(column,flex-start,flex-start,nowrap,"") ;
+        h6{
+            font-size: $fontL;
+            color: $textGrey;
+            font-weight: 700;
+        }
+        .withIcon{
+            width: auto;
+            height: auto;
+            margin-top: $dist1 + .5em;
+            display: flex;
+            @include flex(row,flex-start,center,nowrap,"") ;
+            i,p{
+                font-size: $fontM - .2em;
+                &:nth-child(2){
+                    margin-right: .4em;
+                }
+            }
+            i{color: $primaryColor;}
+            p{color: $textGrey;}
+        }
+        .socials{
+            width: 100%;
+            height: auto;
+            display: flex;
+            @include flex(row,center,center,nowrap,"") ;
+            i{
+                width: 4em;
+                height: 4em;
+                margin: $dist2;
+                border-radius: 50%;
+                @include swapColor(white,$primaryColor) ;
+                position: relative;
+                &:hover{
+                    transform: scale(1.3);
+                }
+                &::before{
+                    font-size: $fontL;
+                    position: absolute;
+                    top: 50%;
+                    right: 50%;
+                    transform: translate(50%,-50%);
+                }  
+            }
+        }
+
+    }
+}
