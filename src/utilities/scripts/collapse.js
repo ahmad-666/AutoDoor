@@ -53,7 +53,16 @@ Collapse.prototype.toggleCollapse = function(e){
 //    all = [...all] ;
 //    let others = all.filter(elm =>elm!=withCollapse);
 //    let font = new FontFaceObserver('iranSans');
-//    font.load().then(()=>new Collapse(withCollapse,others));
+//    font.load().then(()=>new Collapse(withCollapse,others,null,(curr,icon,others)=>{
+    //     curr.classList.toggle('after') ;
+    //     icon.classList.toggle('fa-plus') ;
+    //     icon.classList.toggle('fa-minus') ;
+    //     others.forEach(other=>{
+    //         other.querySelector('.collapse').classList.remove('after');
+    //         other.querySelector('.title i').classList.remove('fa-minus') ;
+    //         other.querySelector('.title i').classList.add('fa-plus') ;
+    //     }) ;
+    // }));
 //    OR(if we want max-height)
 //    font.load().then(()=>new Collapse(withCollapse,others,'5em'));
 //})
