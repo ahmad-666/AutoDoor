@@ -61,7 +61,7 @@ footer{
                         .withIcon{
                             width: auto;
                             height: auto;
-                            margin-top: $dist1;
+                            &:not(:first-child){margin-top: $dist1;}
                             display: flex;
                             @include flex(row,flex-start,center,nowrap,"") ;
                             color: darken($textWhite,15%);

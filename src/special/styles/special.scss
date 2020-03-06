@@ -1,0 +1,65 @@
+@import '../../colors.scss' ;
+@import '../../variables.scss' ;
+@import '../../mixins.scss' ;
+#special{
+    width: 75%;
+    padding: $dist2;
+    border-radius: $dist2;
+    background-color: white;
+    box-shadow: 0 0 1.5em .2em $shadowColor;
+    display: flex;
+    @include flex(row,flex-start,center,nowrap,"") ;
+    overflow: visible;
+    img{
+        flex-shrink: 0;
+        width: 50em;
+        height: 40em;
+        margin-right: $dist3;
+    }
+    .content{
+        width: 100%;
+        height: auto;
+        h4{
+            font-size: $fontXL;
+            color: $primaryColor;
+            font-weight: 700;
+            text-align: center;
+        }
+        form#specialForm{
+            button[type="submit"]{
+                width: auto;
+                height: auto;
+                padding: .5em $dist3;
+                border-radius: $dist2;
+                @include swapColor($textWhite,$primaryColor) ;
+                font-size: $fontM;
+                margin: $dist2 auto 0 auto;
+            }
+            .row{
+                width: 100%;
+                height: auto;
+                margin-top: $dist3;
+                h6{
+                    font-size: $fontM + .2em;
+                    color: lighten($textGrey,15%);
+                }
+                .inputs{
+                    width: 100%;
+                    height: auto;
+                    display: flex;
+                    @include flex(row,flex-start,center,wrap,flex-start) ;
+                    .inputWrapper.text,.inputWrapper.select{
+                        width: calc((100% - (2 * 3em)) / 2) ;
+                        margin: 2em 1.5em;
+                        label {.isRequire{font-size: .9em;}}
+                        .arrow{left: .2em;}
+                    }
+                }
+            }
+            .row#yourInfo{
+                padding-bottom: $dist3;
+                border-bottom: 1px solid lighten($textGrey,30%);
+            }
+        }
+    }
+}

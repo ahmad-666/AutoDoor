@@ -1,3 +1,4 @@
+***you can add <p class="moreInfo"> ... </p> as direct child too
 <form novalidate id="sample" name="sample" class="validate" method="GET" action="#!" enctype="text/plain">
 	<h4>My Title</h4>
 	<div class="inputs">

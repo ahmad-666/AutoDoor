@@ -13,7 +13,7 @@ module.exports = {
     entry: {
         'index' : './src/index/index.js',
         'about' : './src/about/about.js',
-        'agentRequest' : './src/agentRequest/agentRequest.js',
+        'projs' : './src/projs/projs.js',
         'agents' : './src/agents/agents.js',
         'article' : './src/article/article.js',
         'articles' : './src/articles/articles.js',
@@ -178,10 +178,10 @@ module.exports = {
             template: './src/about/about.html' 
         }),
         new HtmlWebpackPlugin({
-            filename: 'agentRequest.html' , 
+            filename: 'projs.html' , 
             inject: true,
-            chunks: ['agentRequest'],
-            template: './src/agentRequest/agentRequest.html' 
+            chunks: ['projs'],
+            template: './src/projs/projs.html' 
         }),
         new HtmlWebpackPlugin({
             filename: 'agents.html' , 

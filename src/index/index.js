@@ -10,6 +10,7 @@ import '../index/styles/categories.scss' ;
 import '../index/styles/features.scss' ;
 import '../index/styles/carousel.scss' ;
 import '../index/styles/partners.scss' ;
+import '../index/styles/agents.scss' ;
 import '../index/styles/articles.scss' ;
 import '../index/styles/footer.scss' ;
 //load scripts

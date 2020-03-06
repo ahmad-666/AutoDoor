@@ -1,0 +1,70 @@
+@import '../../colors.scss' ;
+@import '../../variables.scss' ;
+@import '../../mixins.scss' ;
+#agents{
+    width: 75%;
+    padding: $dist2;
+    border-radius: $dist2;
+    background-color: white;
+    box-shadow: 0 0 1em .2em $shadowColor;
+    h4{
+        font-size: $fontL;
+        font-weight: 700;
+        text-align: center;
+        color: $primaryColor;
+    }
+    table{
+        width: 100%;
+        height: auto;
+        margin-top: $dist2;
+        display: flex;
+        @include flex(column,flex-start,flex-start,nowrap,"") ;
+        overflow: auto;
+        thead,tbody{
+            width: 100%;
+            height: auto;
+            display: flex;
+            @include flex(column,flex-start,flex-start,nowrap,"") ;
+            tr{
+                min-width: 100%;
+                height: auto;
+                padding: $dist2;
+                display: flex;
+                @include flex(row,space-between,center,nowrap,"") ;
+                th,td{
+                    flex-shrink: 0;
+                    height: auto ;
+                    &:nth-child(1){width: 30em;}
+                    &:nth-child(2){width: 25em;}
+                    &:nth-child(3){width: 45em;}
+                    &:nth-child(4){width: 25em;}
+                    p{text-align: center;}
+                }
+                th{
+                    p{
+                        font-size: $fontM ;
+                        color: $textWhite;
+                        font-weight: 700;
+                    }
+                }
+                td{
+                    p{
+                        font-size: $fontM ;
+                        color: darken($textGrey,10%);
+                    }
+                }
+            }
+        }
+        thead{
+            tr{
+                background-color: $primaryColor;
+            }
+        }
+        tbody{
+            tr{
+                &:nth-child(odd){background-color: white;}
+                &:nth-child(even){background-color: lighten($textGrey,30%);}
+            }
+        }
+    }
+}
