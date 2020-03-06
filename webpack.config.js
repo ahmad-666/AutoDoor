@@ -9,6 +9,7 @@ module.exports = {
     optimization: {
         minimize: false //for minify .js files
     },
+    devServer:{port:3000},
     entry: {
         'index' : './src/index/index.js',
         'about' : './src/about/about.js',

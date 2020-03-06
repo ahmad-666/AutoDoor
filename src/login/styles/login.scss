@@ -1,0 +1,76 @@
+@import '../../variables.scss' ;
+@import '../../colors.scss' ;
+@import '../../mixins.scss' ;
+body{
+    background-color: darken($primaryColor,15%);
+    min-height: 100vh;
+}
+div#login,div#forgetPassword,div#signup{
+    width: 60em;
+    height: auto;
+    padding: $dist2;
+    display: flex;
+    @include flex(row,flex-start,center,nowrap,"") ;
+    background-color: white;
+    box-sizing: 0 0 .5em .1em $shadowColor;
+    border-radius: $dist2;
+    position: relative;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%,-50%);
+    #svgImg{
+        flex-shrink: 0;
+        margin-right: $dist3;
+        width: 25em;
+        height: 30em;
+    }
+    .content{
+        width: 100%;
+        height: auto;
+        display: flex;
+        @include flex(column,flex-start,center,nowrap,"") ;
+        #logo{
+            width: 20em;
+            height: 8em;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        h4{
+            font-size: $fontL + .2em;
+            color: $primaryColor;
+            font-weight: 700;
+            margin-top: .3em;
+        }
+        a#signup,a#login,button[type="submit"]{
+            width: 80%;
+            height: auto;
+            padding: .5em $dist2;
+            font-size: $fontM;
+            text-align: center;
+            margin-top: $dist2;
+            border-radius: $dist2;
+        }
+        a#signup,a#login{@include swapColor($textWhite,#26a69a) ;}
+        button[type="submit"]{@include swapColor($textWhite,$primaryColor) ;}
+        form#loginForm,form#signupForm,form#forgetPasswordForm{
+            width: 100%;
+            height: auto;
+            display: flex;
+            @include flex(column,flex-start,center,nowrap,"") ;
+            .inputWrapper.text{
+                width: 100%;
+                margin-top: $dist3;
+            }
+            #forgetPassword{
+                font-size: $fontM - .2em;
+                margin-top: $dist1;
+                color: lighten($textGrey,10%);
+                &:hover{color: $primaryColor;}
+                margin-left: auto;
+            }
+            
+        }
+    }
+}

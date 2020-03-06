@@ -34,7 +34,7 @@ form {
                 ~label {
                     color: $primaryColor;
                     font-size: 8px;
-                    bottom: calc(100% + .5em);
+                    bottom: calc(100% + 1em);
                     transform: translateY(50%);
                     right: 0;
                 }
@@ -117,7 +117,7 @@ form {
         input.style1 {
             ~label.top {
                 font-size: 8px;
-                bottom: calc(100% + .5em);
+                bottom: calc(100% + 1em);
                 transform: translateY(50%);
                 right: 0;
             }
