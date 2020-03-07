@@ -145,6 +145,30 @@
             }
         }
     }
+    #track{
+        width: auto;
+        height: auto;
+        margin: $dist1 auto 0 auto;
+        border-radius: $dist2;
+        background-color: $primaryColor;
+        color: white;
+        display: flex;
+        @include flex(column,flex-start,center,nowrap,"") ;
+        padding: $dist3 $dist4 * 1.5;
+        h6{
+            font-size: $fontL;
+            font-weight: 700;
+        }
+        p{
+            margin-top: $dist1;
+            font-size: $fontM;
+        }
+    }
+    #track + p {
+        margin: $dist1 auto ;
+        font-size: $fontM;
+        color: $textGrey;
+    }
 }
 // @include resizeTablet(#timelineWrapper) ;
 // @include resizeMobile(#timelineWrapper) ;

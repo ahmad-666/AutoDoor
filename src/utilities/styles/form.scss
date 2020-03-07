@@ -1,6 +1,43 @@
 @import '../../variables.scss' ;
 @import '../../colors.scss' ;
 @import '../../mixins.scss' ;
+input {&:focus{outline: none;}}
+textarea {&:focus{outline: none;}}
+select {&:focus{outline: none;}}
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+}
+input[type=number] {-moz-appearance:textfield;}
+// there are other styles needed that can be found inside /utilities/styles/selec2.scss
+.select2-results__option{
+    font-size: $fontM;
+    color: $textDark ;
+}
+.select2-results__option.alert{
+    font-size: $fontM ;
+    color: $textDark ;
+}
+@include mediaQ(1000px){
+    .select2-results__option{
+        font-size: $fontM - .3em;
+    }
+    .select2-results__option.alert{
+        font-size: $fontM - .3em;
+    }
+}
+// @include mediaQ(700px){
+//     .select2-results__option{
+//         font-size: $fontM - .8em;
+//     }
+//     .select2-results__option.alert{
+//         font-size: $fontM - .8em ;
+//     }
+// }
 form { 
     display: flex;
     @include flex(column, flex-start, center, nowrap, "");

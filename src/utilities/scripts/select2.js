@@ -11,6 +11,8 @@
 //and replace them with 
 //enoughRoomAbove = false;
 //enoughRoomBelow = true;
+//-------------------------------------------------
+//for validate select2 we can see form.js file
 $('.select2#state').select2({
     placeholder: 'استان خود را  انتخاب کنید'
 });

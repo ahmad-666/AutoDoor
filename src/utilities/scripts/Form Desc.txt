@@ -161,8 +161,7 @@
 				<i class="fas fa-caret-up"></i>
 				<p>باید مقداری را وارد کنید</p>
 			</div>
-		</div>
-		
+		</div>	
 		<div class="inputWrapper numberHandler" data-append="تومان" data-change-target="finalBasketChange" data-init="500000">
 			<i class="fas fa-minus decrease"></i>
 			<input type="number" id="quantity" name="quantity" data-min="1" data-max="10" data-step="1"
@@ -170,7 +169,6 @@
 			<i class="fas fa-plus increase"></i>
 		</div>
 		<p id="finalBasketChange"></p>
-	
 		<div class="inputWrapper checkboxes">
 			<div class="checkbox">
 				<input type="checkbox" id="checkbox1" name="checkbox1" class="style1" value="checkbox1">

@@ -1,28 +1,21 @@
 @import '../../variables.scss' ;
 @import '../../colors.scss' ;
 @import '../../mixins.scss' ;
+// bellow styles for each select2 in .scss files 
+// select2 has some styles inside form.scss too and those are constants
 .select2{
-    width: 15em ;
-    font-size: $fontM ;
-    margin-top: $dist2 ;
-    option{
-        color: darken($textGrey,10%) ;
-        font-size: $fontM ;
-    }
+    width: calc((100% - (4 * 3em)) / 4);
+    font-size: $fontM - .2em ;
+    margin: $dist2 ;
 }
 .select2-container--default .select2-selection--single{
-    border-radius: $dist3 ;
+    border-radius: $dist2 ;
     border: 1.2px solid lighten($textGrey,25%) ;
-    height: 2.5em;
+    height: 3em;
     outline: none  ;
-    .select2-selection__rendered{line-height: 2.5em ;}
+    .select2-selection__rendered{line-height: 3em ;}
     .select2-selection__arrow{@include center-y ;}
 }
-.select2-results__option{
-    font-size: $fontM ;
-    color: $textDark ;
-}
-.select2-results__option.alert{
-    font-size: $fontM ;
-    color: $textDark ;
-}
+.select2-container--default .select2-selection--single.error{
+    border: 1.2px solid lighten($redColor2,5%) ;
+ }

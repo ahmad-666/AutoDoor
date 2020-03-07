@@ -152,6 +152,33 @@ FormValidate.prototype.handleEvent = function(e){
         }
     }
 }
+//select2 validate-------------------------------------
+//select2 validate-------------------------------------
+//select2 validate-------------------------------------
+class Select2Validate{
+    constructor(form,submit){
+        this.form = form ;
+        this.submit = submit ;
+        this.validate = false ;
+        this.select2s = this.form.querySelectorAll('select.select2.validate') ;
+        this.select2s = [...this.select2s] ;
+        this.submit.addEventListener('click',this.submitForm.bind(this)) ;
+    }
+    submitForm(e){
+        for(let i=0 ; i < this.select2s.length ; i++){
+            let select2 = this.select2s[i] ;
+            const generatedSelect2 = select2.nextElementSibling ;
+            const value = generatedSelect2.querySelector('.select2-selection__rendered').getAttribute('title') ;
+            const elm = generatedSelect2.querySelector('.select2-selection.select2-selection--single') ;
+            if(!value) {
+                elm.classList.add('error') ;
+                break ;
+            }    
+            else elm.classList.remove('error') ;      
+        }
+        this.validate=this.select2s.every(select2=>select2.nextElementSibling.querySelector('.select2-selection__rendered').getAttribute('title'))?true:false ;
+    }
+}
 //select/option------------------------------------------
 //select/option------------------------------------------
 //select/option------------------------------------------
@@ -741,6 +768,11 @@ class FileHandler{
 // let formSubmit = form.querySelector('button.final') ;
 // let inputs = form.querySelectorAll('.validate') ;
 // new FormValidate(form,formSubmit,inputs,false,<instance-of-Modal>) ;
+//Select2--------------------------------
+// const select2Validate = new Select2Validate(
+//     formData.elm,
+//     formData.submit
+// )
 // //Select--------------------------------
 // let selects = document.querySelectorAll('.inputWrapper.select') ;
 // selects = [...selects] ;
@@ -812,7 +844,8 @@ class FileHandler{
 //exports--------------------------------
 //exports--------------------------------
 export default{
-	FormValidate,
+    FormValidate,
+    Select2Validate,
 	Select,
 	SelectSearch,
 	LabelHandler,

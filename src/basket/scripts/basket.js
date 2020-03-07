@@ -1,3 +1,5 @@
+import $ from 'jquery' ;
+import select2 from 'select2' ;
 import timeline from '../../utilities/scripts/timeline.js' ;
 import Table from '../../utilities/scripts/table.js' ;
 import form from '../../utilities/scripts/form.js' ;
@@ -6,6 +8,7 @@ const TimelineSlider = timeline.TimelineSlider ;
 const Progress = timeline.Progress ;
 const FormValidate = form.FormValidate ;
 const LabelHandler = form.LabelHandler ;
+const Select2Validate = form.Select2Validate ;
 const formElm = document.querySelector('form#orderForm') ;
 const stage1 = formElm.querySelector('#stage1') ;
 const stage2 = formElm.querySelector('#stage2') ;
@@ -22,21 +25,36 @@ new Table(table,trs,totalPrice) ;
 stage1.querySelector('#confirmBasket').addEventListener('click',e=>{
     timelineSlider.changeSlide(parseInt(e.currentTarget.getAttribute('data-slide')));
 })
-//move to next slide if form is validated
+//select2 
+$('.select2#state').select2({
+    placeholder: 'استان خود را  انتخاب کنید'
+});
+$('.select2#city').select2({
+    placeholder: 'شهر خود را  انتخاب کنید'
+});
 //form validation 
 const formData = {
     elm: formElm,
     submit: stage2.querySelector('button.changeSlide.next'),
     inputs: stage2.querySelectorAll('.validate'),
     send: false ,
-    modal: null  
+    modal: null 
 } 
 stage2.querySelectorAll('.labelHandler').forEach(label=>new LabelHandler(label)) ;
-new FormValidate(
+const formValidation = new FormValidate(
     formData.elm,
     formData.submit,
     formData.inputs,
     formData.send,
     formData.modal,
 )
+const select2Validate = new Select2Validate(
+    formData.elm,
+    formData.submit
+)
+//move to next slide if form is validated
+stage2.querySelector('button.changeSlide.next').addEventListener('click',e=>{
+    if(formValidation.validate && select2Validate.validate) timelineSlider.changeSlide(parseInt(e.currentTarget.getAttribute('data-slide')));
+})
+
 

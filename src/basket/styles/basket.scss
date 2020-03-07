@@ -1,3 +1,4 @@
+@import '../../../node_modules/select2/dist/css/select2.min.css' ;
 @import '../../variables.scss' ;
 @import '../../mixins.scss' ;
 @import '../../colors.scss' ;
@@ -7,4 +8,35 @@
     background-color: white;
     border-radius: $dist2;
     box-shadow: 0 0 1em .2em $shadowColor;
+    form#orderForm{
+        .slide#stage2{
+            .content{
+                display: flex;
+                @include flex(row,flex-start,center,wrap,flex-start) ;
+                .inputWrapper.text{
+                    margin: $dist2;
+                    width: calc((100% - (4 * 3em)) / 4);
+                    height: 4em;
+                }
+                .select2{
+                    width: calc((100% - (4 * 3em)) / 4);
+                    font-size: $fontM - .2em ;
+                    margin: $dist2 ;
+                }
+                .select2-container--default .select2-selection--single{
+                    border-radius: $dist2 ;
+                    border: 1.2px solid lighten($textGrey,25%) ;
+                    height: 3em;
+                    outline: none  ;
+                    .select2-selection__rendered{line-height: 3em ;}
+                    .select2-selection__arrow{@include center-y ;}
+                }
+                .select2-container--default .select2-selection--single.error{
+                   border: 1.2px solid lighten($redColor2,5%) ;
+                }
+               
+            }
+            
+        }
+    }
 }

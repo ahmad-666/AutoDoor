@@ -359,25 +359,111 @@
                             </div>
                             <button type="button" id="confirmBasket" class="btn mid pulse" data-slide="1">تایید سبد خرید</button>
                         </div>                     
-                    </div>
-                    <!-- <div class="btnWrapper">
-                        <button type="button" class="changeSlide next" data-slide="1">مرحله بعد</button>
-                    </div> -->
+                    </div>                
                 </div>
                 <div class="slide" id="stage2">
                     <h4> مشخصات خریدار </h4>
                     <div class="content">
-                        <p>اطلاعات مرحله ۲</p>
+                        <div class="inputWrapper text">
+                            <input type="text" id="name" name="name" class="style1 labelHandler validate" required>
+                            <label for="name">
+                                <i class="fas fa-asterisk isRequire"></i>
+                                <i class="fas fa-user icon"></i>
+                                <p>نام و نام خانوادگی</p>
+                            </label>
+                            <span class="line"></span>
+                            <div class="msg">
+                                <p>نام و نام خانوادگی خود را وارد نمایید</p>
+                                <i class="fas fa-caret-up"></i>
+                            </div>
+                        </div>
+                        <div class="inputWrapper text">
+                            <input type="email" id="email" name="email" class="style1 labelHandler validate">
+                            <label for="email">
+                                <i class="fas fa-envelope icon"></i>
+                                <p>پست الکترونیکی</p>
+                            </label>
+                            <span class="line"></span>
+                        </div>
+                        <div class="inputWrapper text">
+                            <input type="number" id="tel" name="tel" class="style1 labelHandler validate">
+                            <label for="tel">
+                                <i class="fas fa-phone icon"></i>
+                                <p>شماره ثابت</p>
+                            </label>
+                            <span class="line"></span>                   
+                        </div>
+                        <div class="inputWrapper text">
+                            <input type="number" id="mobile" name="mobile" class="style1 labelHandler validate" required pattern="\d{11}">
+                            <label for="mobile">
+                                <i class="fas fa-asterisk isRequire"></i>
+                                <i class="fas fa-mobile-alt icon"></i>
+                                <p>شماره موبایل</p>
+                            </label>
+                            <span class="line"></span>
+                            <div class="msg">
+                                <p>شماره موبایل صحیح(شروع با ۰۹) وارد نمایید</p>
+                                <i class="fas fa-caret-up"></i>
+                            </div>
+                        </div>
+                        <select class="select2 validate" id="state" name="state">
+                            <option></option>
+                            <option value="tehran">تهران</option>
+                            <option value="mashhad">مشهد</option>
+                            <option value="tehran">تهران</option>
+                            <option value="mashhad">مشهد</option>
+                            <option value="tehran">تهران</option>
+                            <option value="mashhad">مشهد</option>
+                        </select>
+                        <select class="select2 validate" id="city" name="city">
+                            <option></option>
+                            <option value="tehran">تهران</option>
+                            <option value="mashhad">مشهد</option>
+                            <option value="tehran">تهران</option>
+                            <option value="mashhad">مشهد</option>
+                            <option value="tehran">تهران</option>
+                            <option value="mashhad">مشهد</option>
+                        </select>
+                        <div class="inputWrapper text">
+                            <input type="text" id="address" name="address" class="style1 labelHandler validate" required>
+                            <label for="name">
+                                <i class="fas fa-asterisk isRequire"></i>
+                                <i class="fas fa-map-marked-alt icon"></i>
+                                <p> آدرس ارسالی </p>
+                            </label>
+                            <span class="line"></span>
+                            <div class="msg">
+                                <p> آدرس را وارد نمایید </p>
+                                <i class="fas fa-caret-up"></i>
+                            </div>
+                        </div>
+                        <div class="inputWrapper text">
+                            <input type="text" id="post" name="post" class="style1 labelHandler validate" required>
+                            <label for="post">
+                                <i class="fas fa-asterisk isRequire"></i>
+                                <i class="fas fa-mail-bulk"></i>
+                                <p>کد پستی</p>
+                            </label>
+                            <span class="line"></span>
+                            <div class="msg">
+                                <p>کد پستی را وارد کنید</p>
+                                <i class="fas fa-caret-up"></i>
+                            </div>
+                        </div>     
                     </div>
                     <div class="btnWrapper">
                         <button type="button" class="changeSlide prev" data-slide="-1">مرحله قبل</button>
-                        <button type="button" class="changeSlide next" data-slide="1">مرحله بعد</button>
+                        <button type="button" class="changeSlide next validate" data-slide="1">مرحله بعد</button>
                     </div>
                 </div>
                 <div class="slide" id="stage3">
                     <h4> کد پیگیری </h4>
                     <div class="content">
-                        <p>اطلاعات مرحله ۳</p>
+                       <div id="track">
+                           <h6>کد پیگیری سفارش شما</h6>
+                           <p>1234567890</p>
+                       </div>
+                       <p>از اعتماد شما به نام سایت متشکریم</p>
                     </div>
                     <div class="btnWrapper">
                         <button type="button" class="changeSlide prev" data-slide="-1">مرحله قبل</button>
