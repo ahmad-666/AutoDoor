@@ -1,7 +1,7 @@
 @import '../../colors.scss' ;
 @import '../../variables.scss' ;
 @import '../../mixins.scss' ;
-form#basket{
+form#orderForm{
     display: flex;
     @include flex(column,flex-start,center,nowrap,"") ;
     padding: $dist2;
@@ -13,22 +13,25 @@ form#basket{
     table{
         width: 100%;
         height: auto;
-        margin-top: $dist1;
+        margin-top: 0;
         display: flex;
         @include flex(column,flex-start,flex-start,nowrap,"") ;
+        overflow: auto;
         thead,tbody{
-            width: 100%;
+            min-width: 100%;
             height: auto;
             display: flex;
             @include flex(column,flex-start,flex-start,nowrap,"") ;
             tr{
-                width: 100%;
+                min-width: 100%;
                 height: auto;
                 padding: $dist2;
                 display: flex;
                 background: transparent;
-                @include flex(row,flex-start,center,nowrap,"") ;
+                @include flex(row,space-between,center,nowrap,"") ;
                 th,td{
+                    text-align: center;
+                    flex-shrink: 0;
                     font-size: 10px;
                     height: auto;
                     display: flex;
@@ -42,16 +45,10 @@ form#basket{
                         color: $textDark;
                     }
                 }
-                th.prodName,td.prodName{width: 100%;}
-                th.prodQuantity,td.prodQuantity{
-                    flex-shrink: 0;
-                    width: 10em;
-                }
-                th.prodPrice,td.prodPrice{width: 50%;}
-                th.prodRemove,td.prodRemove{
-                    flex-shrink: 0;
-                    width: 5em;
-                }
+                th.prodName,td.prodName{width: 40em;}
+                th.prodQuantity,td.prodQuantity{width: 10em;}
+                th.prodPrice,td.prodPrice{width: 20em;}
+                th.prodRemove,td.prodRemove{width: 5em;}
                 th.prodName{
                     h6{width: auto;}
                     @include flex(column,flex-start,flex-start,nowrap,"") ;
@@ -322,8 +319,8 @@ form#basket{
             p{
                 &:nth-child(1){
                     font-weight: 700;
-                    color: $textGrey;
-                    font-size: $fontM;
+                    color: $primaryColor;
+                    font-size: $fontL;
                 }
                 &:nth-child(2){
                     font-size: $fontM + .2em;
@@ -338,17 +335,5 @@ form#basket{
         }
     }
 }
-@include resizeTablet('form#basket table thead tr th, form#basket table thead tr td, form#basket table tbody tr th, form#basket table tbody tr td') ;
-@include resizeMobile('form#basket table thead tr th, form#basket table thead tr td, form#basket table tbody tr th, form#basket table tbody tr td') ;
-@include mediaQ(550px){
-    form#basket{padding: .3em;}
-}
-@include mediaQ(330px){
-    form#basket table thead tr th, 
-    form#basket table thead tr td, 
-    form#basket table tbody tr th, 
-    form#basket table tbody tr td{
-        font-size: 4px;
-    }
-
-}
+@include resizeTablet('form#orderForm table') ;
+@include resizeMobile('form#orderForm table') ;

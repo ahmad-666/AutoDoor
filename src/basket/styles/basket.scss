@@ -1,0 +1,10 @@
+@import '../../variables.scss' ;
+@import '../../mixins.scss' ;
+@import '../../colors.scss' ;
+@import '../../utilities/styles/timeline.scss' ;
+@import '../../utilities/styles/table.scss' ;
+#timelineWrapper{
+    background-color: white;
+    border-radius: $dist2;
+    box-shadow: 0 0 1em .2em $shadowColor;
+}

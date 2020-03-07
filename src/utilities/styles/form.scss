@@ -670,20 +670,18 @@ form {
         .decrease,
         input {
             margin-right: $dist1;
-
             &:first-child {
                 margin-right: 0;
             }
         }
-
         .increase,
         .decrease {
             font-size: $fontM;
             cursor: pointer;
-            color: lighten($darkColor, 5%);
+            // color: lighten($darkColor, 5%);
+            color: $primaryColor;
             // color: darken($textGrey,15%) ;      
         }
-
         input {
             width: 2em;
             height: 2em;
@@ -692,9 +690,7 @@ form {
             color: $darkColor;
             font-size: $fontM;
             border: 1.2px solid lighten($textGrey, 20%);
-
         }
-
         input.error {
             border: 1.2px solid lighten($redColor2, 5%);
         }

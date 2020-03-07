@@ -20,6 +20,99 @@
     // border-radius: $dist2 ;
     overflow: hidden;
 }
+// <div class="withIcon">
+//     <i class="fas fa-building"></i>
+//     <p class="title">نام برند :</p>
+//     <p> نام برند </p>
+// </div>
+.withIcon{
+    width: auto;
+    height: auto;
+    display: flex;
+    @include flex(row,flex-start,center,nowrap,"") ;
+    i{width: 1em;}
+    i,p{
+        font-size: $fontM ;
+        color: darken($textWhite,25%);    
+    }
+    p{
+        &:not(:first-child){margin-right: .3em;}
+    }
+    p.title{font-weight: 700;}
+}
+// <div class="stars">
+//     <i class="fas fa-star active"></i>
+//     <i class="fas fa-star active"></i>
+//     <i class="fas fa-star active"></i>
+//     <i class="fas fa-star active"></i>
+//     <i class="fas fa-star"></i>
+//     <p> (10نفر) </p>
+// </div>
+.stars{
+    width: auto;
+    height: auto;
+    display: flex;
+    @include flex(row,flex-start,center,nowrap,"") ;
+    .fa-star{
+        font-size: $fontM ;
+        &:not(:first-child){margin-right: .1em;}
+        color: darken($textWhite,20%);
+    }
+    .fa-star.active{color: $yellowColor;}
+    p{
+        font-size: $fontM - .2em;
+        margin-right: .3em;
+        color: darken($textWhite,25%);
+    }
+}
+// <div class="priceWrapper style1">
+//     <div class="prices">
+//         <p class="beforeDiscount">1.000.000 تومان</p>
+//         <p class="finalDiscount"> 500.000 تومان </p>
+//     </div>
+//     <span class="discount">50%</span>
+// </div>
+.priceWrapper.style1{
+    width: auto;
+    height: auto;
+    display: flex;
+    @include flex(row,flex-start,center,nowrap,"") ;
+    .prices{
+        width: auto;
+        height: auto;
+        .beforeDiscount{
+            font-size: $fontM - .2em;
+            text-decoration: line-through;
+            color: darken($textWhite,20%);
+        }
+        .finalDiscount{
+            margin-top: 0;
+            font-size: $fontM + .2em ;
+            color: $primaryColor;
+        }
+    }
+    .discount{
+        width: auto;
+        height: auto;
+        border-radius: $dist1;
+        padding: .2em $dist1;
+        font-size: $fontS + .1em;
+        color: $textWhite;
+        background-color: $primaryColor;
+        margin-right: $dist2;
+    }
+}
+// <div class="skewContainer">
+//     <div class="skew">
+//         <h4> تخفیف ها </h4>
+//     </div>
+//     <div class="skew">
+//         <a href="products.html">
+//             <p>نمایش همه</p>
+//             <i class="fas fa-angle-double-left"></i>
+//         </a>
+//     </div>
+// </div>
 .skewContainer{
     width: 100%;
     height: auto;

@@ -54,6 +54,11 @@
                         label {.isRequire{font-size: .9em;}}
                         .arrow{left: .2em;}
                     }
+                    .inputWrapper.textarea{
+                        width: 100% ;
+                        margin: 2em 1.5em;
+                        textarea{height: 10em;}
+                    }
                 }
             }
             .row#yourInfo{

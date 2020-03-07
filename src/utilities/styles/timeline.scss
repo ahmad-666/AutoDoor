@@ -25,7 +25,7 @@
         .line{
             @include center-y ;
             height: .4em;
-            background-color: $greenColor1 ;
+            background-color: $greenColor ;
             right: 0 ;
             transition: all .3s linear ;
         }
@@ -63,14 +63,14 @@
             }
             .circle{
                 border: 1.2px solid transparent ;
-                background-color: $greenColor1 ;
+                background-color: $greenColor ;
                 i{
                     opacity: 1;
                 }
             }
         }
     }
-    form#reserve{
+    form#orderForm{
         width: 100% ;
         height: auto;
         margin-top: $dist2 ;
@@ -100,10 +100,10 @@
                     margin-top: $dist1 ;
                     display: flex ;
                     @include flex(column,flex-start,flex-start,nowrap,"") ;
-                    p{
-                        font-size: $fontM ;
-                        color: darken($textGrey,20%) ;
-                    } 
+                    // p{
+                    //     font-size: $fontM ;
+                    //     color: darken($textGrey,20%) ;
+                    // } 
                 }
                 .btnWrapper{
                     width: auto ;
@@ -134,10 +134,10 @@
                         }
                     }
                     .changeSlide.next{
-                        background-color: $greenColor1 ;
+                        background-color: $greenColor ;
                         &:hover{
-                            border: 1.2px solid $greenColor1 ;
-                            color: $greenColor1 ;
+                            border: 1.2px solid $greenColor ;
+                            color: $greenColor ;
                             background-color: $textWhite ;
                         }
                     }

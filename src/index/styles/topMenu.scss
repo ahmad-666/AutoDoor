@@ -23,7 +23,7 @@ header{
             height: auto;
             display: flex;
             @include flex(column,flex-start,center,nowrap,"") ;
-            color: $primaryColor;
+            color: $primaryColor !important;
             &:not(:first-child){margin-right: $dist3 + 1em ;}
             &:not(.logo){
                 transition: all .2s linear;
@@ -34,6 +34,7 @@ header{
                     border-bottom: 1px solid $primaryColor;
                 }
             }   
+            p,i{color: inherit;}
             p{
                 font-size: $fontM;
                 margin-top: .2em;

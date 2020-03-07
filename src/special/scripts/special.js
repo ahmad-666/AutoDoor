@@ -7,7 +7,7 @@ const formData = {
     elm: formElm,
     submit: formElm.querySelector('button[type="submit"]'),
     inputs: formElm.querySelectorAll('.validate'),
-    send: false ,
+    send: true ,
     modal: null  
 }
 formElm.querySelectorAll('.labelHandler').forEach(label=>new LabelHandler(label)) ;

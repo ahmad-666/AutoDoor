@@ -208,6 +208,9 @@ form.reply{
     }
 }
 #adminApprove{
+    box-shadow: 0 0 1em .2em $shadowColor;
+    background-color: white;
+    border-radius: $dist1;
     opacity: 0;
     visibility: hidden;
     z-index: -100;

@@ -1,0 +1,90 @@
+@import '../../variables.scss' ;
+@import '../../mixins.scss' ;
+@import '../../colors.scss' ;
+@import '../../utilities/styles/sliderMove.scss' ;
+main{
+    width: 100%;
+    height: auto;
+    display: flex; 
+    @include flex(column,flex-start,flex-start,nowrap,"") ;
+    section{
+        width: 100%;
+        height: auto;
+        &:nth-child(1){padding: $dist3;}
+        &:nth-child(2){
+            display: flex;
+            @include flex(row,flex-start,stretch,nowrap,"") ;
+        }
+    }
+    section#productMain{
+        h4,p{text-align: center;}
+        h4{
+            font-size: $fontL;
+            color: $textDark;
+            font-weight: 700;
+        }
+        p{
+            margin-top: $dist1;
+            font-size: $fontM;
+            line-height: $dist2 + .3em;
+            color: lighten($textGrey,10%);
+        }
+    }
+    section#productDetail{
+        .sliderMove,.details{width: 50%;}
+        .sliderMove{height: 40em;}
+        .details{
+            height: auto;
+            padding: $dist2;
+            background-color: white;
+            display: flex;
+            @include flex(column,space-between,flex-start,nowrap,"") ;
+            > * {
+                &:not(:first-child){margin-top: $dist2;}
+            }
+            .btn.mid{font-size: $fontM;}
+            #available{color: $textWhite;background-color: $greenColor;}
+            #notAvailable{color: $textWhite;background-color: lighten($redColor2,5%);}
+            #addToBasket{
+                padding: $dist1 $dist2;
+                @include swapColor($textWhite,$greenColor) ;
+            }
+            form#basketForm{
+                width: auto;
+                height: auto;
+                display: flex;
+                @include flex(row,flex-start,center,nowrap,"") ;
+                .col{
+                    width: auto;
+                    height: auto;
+                    display: flex;
+                    &:nth-child(1){
+                        @include flex(row,flex-start,center,nowrap,"") ;
+                        p{
+                            font-size: $fontM;
+                            font-weight: 700;
+                            color: $primaryColor;
+                        }
+                        .inputWrapper.numberHandler{
+                            margin-right: $dist1;
+                            input{width: 3em;}
+                        }
+                    }
+                    &:nth-child(2){
+                        margin-right: $dist3;
+                        @include flex(column,flex-start,flex-start,nowrap,"") ;
+                        p{
+                            margin-top: $dist1;
+                            display: flex;
+                            @include flex(column,flex-start,flex-start,nowrap,"") ;
+                            span{
+                                font-size: $fontM - .2em;
+                                color: darken($textWhite,25%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

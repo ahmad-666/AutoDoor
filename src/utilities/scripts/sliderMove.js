@@ -51,6 +51,4 @@ SliderMove.prototype.changeSlide = function(e){
     }
     this.dots[this.currIndex].classList.add('active') ;
 }
-export default{
-    SliderMove
-}
+export default SliderMove ;

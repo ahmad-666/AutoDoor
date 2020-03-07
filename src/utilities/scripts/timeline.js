@@ -69,6 +69,10 @@ function Timeline(timeline,progressInstance,sliderInstance){
 //         <button type="button" class="changeSlide next validate" data-slide="1">مرحله بعد</button>
 //     </div>
 // </div>
+//*** for change slider manually :
+// document.querySelector('#confirmBasket').addEventListener('click',e=>{
+//     timelineSlider.changeSlide(parseInt(e.currentTarget.getAttribute('data-slide')));
+// })
 // let progress = new Timeline.Progress(document.querySelector('#timeline'),500) ;
 // let timelineSlider = new Timeline.TimelineSlider(document.querySelector('#timelineSlider'),progress) ;
 // new Timeline.Timeline(document.querySelector('#timelineWrapper'),progress,timelineSlider) ;
