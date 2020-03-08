@@ -1,0 +1,76 @@
+@import '../../variables.scss' ;
+@import '../../mixins.scss' ;
+@import '../../colors.scss' ;
+@import '../../utilities/styles/productSlider.scss' ;
+#projs{
+    overflow: visible;
+    .projs{
+        width: 100%;
+        height: auto;
+        .proj{
+            width: 100%;
+            height: auto;
+            background-color: white;
+            border-radius: $dist2;
+            padding: $dist2;
+            overflow: hidden;
+            box-shadow: 0 0 1em .3em $shadowColor;
+            margin-top: $dist2;
+            display: flex;
+            @include flex(row,space-between,flex-start,nowrap,"") ;
+            .content{
+                width: 100%;
+                height: auto;
+                h6{
+                    font-size: $fontL;
+                    color: $primaryColor;
+                    font-weight: 700;
+                }
+                .withIcon{
+                    margin-top: $dist2;
+                }
+                .desc{
+                    margin-top: $dist2;
+                    color: $textGrey;
+                    line-height: $dist2 + .3em;
+                    font-size: $fontM ;
+                }
+            }
+            .productSlider{
+                flex-shrink: 0;
+                width: 45em ;
+                margin-right: $dist3  ;
+                .curr_wrapper{
+                    width: 100% ;
+                    height: 25em;              
+                }
+                .slider_wrapper{
+                    .arrow{
+                        width: 3.5em ;
+                        height: 3.5em;       
+                    }
+                    .slider{
+                        .slide{
+                            width: calc((100% - (4 * 1.4em)) / 4) ;
+                            height: 7em;                                               
+                        }        
+                    }
+                }
+            }
+        }
+    }
+    button#showMore{
+        display: inline-block;
+        width: 15em;
+        height: auto;
+        margin-top: $dist2 ;
+        position: relative;
+        right: 50%;
+        transform: translateX(50%);
+        border-radius: $dist2;
+        @include swapColor($textWhite,$primaryColor) ;
+        padding: $dist1 $dist2;
+        text-align: center;
+        font-size: $fontM;
+    }
+}

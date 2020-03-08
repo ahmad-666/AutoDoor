@@ -1,0 +1,129 @@
+@import '../../colors.scss' ;
+@import '../../variables.scss' ;
+@import '../../mixins.scss' ;
+#orders{
+    width: 90%;
+    height: auto;
+    padding: $dist2;
+    background-color: white;
+    border-radius: $dist2;
+    overflow: hidden;
+    margin: $sectionsDist auto 0 auto;
+    box-shadow: 0 0 .5em .1em $shadowColor;
+    h4{
+        font-size: $fontL;
+        color: $primaryColor;
+        font-weight: 700;
+        text-align: center;
+    }
+    table{
+        width: 100%;
+        height: auto;
+        overflow: auto;
+        margin-top: $dist2;
+        thead,tbody{
+            min-width: 100%;
+            height: auto;
+            tr{
+                min-width: 100%;
+                height: auto;
+                display: flex;
+                @include flex(row,space-between,stretch,nowrap,"") ;
+                th,td{
+                    flex-shrink: 0;
+                    padding: $dist1;
+                }
+                th{
+                    h6{
+                        font-size: $fontM;
+                        font-weight: 700;
+                        text-align: center;
+                    }
+                }
+                th.code,td.code{width: 12em;}
+                th.products,td.products{width: 30em ;}
+                th.date,td.date{width: 15em;}
+                th.address,td.address{width: 45em;}
+                th.status,td.status{width: 20em;}
+                td.code,td.date,td.address,td.status{
+                    text-align: center;
+                    p{font-size: $fontM - .2em;}
+                }
+                td.code,td.date,td.address{
+                    p{color: $textGrey;}
+                }
+                td.status{
+                    p{
+                        width: auto;
+                        height: auto;
+                        padding: $dist1 ;
+                        border-radius: $dist2;
+                        color: $textWhite;
+                        white-space: nowrap;
+                    }
+                    p.process{background-color: $orangeColor1;}
+                    p.sending{background-color: $blueColor1;}
+                    p.success{background-color: $greenColor;}
+                }
+                td.products{
+                    ul{
+                        width: 100%;
+                        height: auto;
+                        display: flex;
+                        @include flex(column,flex-start,flex-start,nowrap,"") ;
+                        li{
+                            width: 100%;
+                            height: auto;
+                            &:not(:first-child){margin-top: $dist1;}
+                            position: relative;
+                            &::before{
+                                content: '';
+                                width: .7em;
+                                height: .7em;
+                                background-color: $blueColor1;
+                                border-radius: 50%;
+                                position: absolute;
+                                right: -$dist1 * 2;
+                                top: $dist1;
+                                // transform: translateY(-50%);
+                            }
+                            a{
+                                display: inline-block;
+                                width: 100%;
+                                height: auto;
+                                p{
+                                    &:nth-child(1){
+                                        font-size: $fontM;
+                                        color: $textDark;
+                                    }
+                                    &:nth-child(2){
+                                        font-size: $fontM - .2em;
+                                        color: lighten($textGrey,5%);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        thead{
+            tr{
+                background-color: $primaryColor;
+                th{color: $textWhite;}
+            }
+        }
+        tbody{
+            tr{
+                &:nth-child(odd){
+                    background-color: white;
+                }
+                &:nth-child(even){
+                    background-color: darken(white,5%);
+                }
+            }
+        }
+        
+    }
+
+}

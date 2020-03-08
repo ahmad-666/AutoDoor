@@ -20,12 +20,12 @@
     // border-radius: $dist2 ;
     overflow: hidden;
 }
-// <div class="withIcon">
-//     <i class="fas fa-building"></i>
-//     <p class="title">نام برند :</p>
-//     <p> نام برند </p>
-// </div>
 .withIcon{
+    // <div class="withIcon">
+    //     <i class="fas fa-building"></i>
+    //     <p class="title">نام برند :</p>
+    //     <p> نام برند </p>
+    // </div>
     width: auto;
     height: auto;
     display: flex;
@@ -40,15 +40,15 @@
     }
     p.title{font-weight: 700;}
 }
-// <div class="stars">
-//     <i class="fas fa-star active"></i>
-//     <i class="fas fa-star active"></i>
-//     <i class="fas fa-star active"></i>
-//     <i class="fas fa-star active"></i>
-//     <i class="fas fa-star"></i>
-//     <p> (10نفر) </p>
-// </div>
 .stars{
+    // <div class="stars">
+    //     <i class="fas fa-star active"></i>
+    //     <i class="fas fa-star active"></i>
+    //     <i class="fas fa-star active"></i>
+    //     <i class="fas fa-star active"></i>
+    //     <i class="fas fa-star"></i>
+    //     <p> (10نفر) </p>
+    // </div>
     width: auto;
     height: auto;
     display: flex;
@@ -65,14 +65,14 @@
         color: darken($textWhite,25%);
     }
 }
-// <div class="priceWrapper style1">
-//     <div class="prices">
-//         <p class="beforeDiscount">1.000.000 تومان</p>
-//         <p class="finalDiscount"> 500.000 تومان </p>
-//     </div>
-//     <span class="discount">50%</span>
-// </div>
 .priceWrapper.style1{
+    // <div class="priceWrapper style1">
+    //     <div class="prices">
+    //         <p class="beforeDiscount">1.000.000 تومان</p>
+    //         <p class="finalDiscount"> 500.000 تومان </p>
+    //     </div>
+    //     <span class="discount">50%</span>
+    // </div>
     width: auto;
     height: auto;
     display: flex;
@@ -102,18 +102,18 @@
         margin-right: $dist2;
     }
 }
-// <div class="skewContainer">
-//     <div class="skew">
-//         <h4> تخفیف ها </h4>
-//     </div>
-//     <div class="skew">
-//         <a href="products.html">
-//             <p>نمایش همه</p>
-//             <i class="fas fa-angle-double-left"></i>
-//         </a>
-//     </div>
-// </div>
 .skewContainer{
+    // <div class="skewContainer">
+    //     <div class="skew">
+    //         <h4> تخفیف ها </h4>
+    //     </div>
+    //     <div class="skew">
+    //         <a href="products.html">
+    //             <p>نمایش همه</p>
+    //             <i class="fas fa-angle-double-left"></i>
+    //         </a>
+    //     </div>
+    // </div>
     width: 100%;
     height: auto;
     overflow: hidden;
@@ -331,6 +331,12 @@ ul.scrollSpyList.fix{
 .scrollFadeMove{opacity: 0;visibility: hidden;}
 .scrollFadeMove.fade{opacity: 1;visibility: visible;}
 .blockReveal{
+    // <div class="blockReveal" data-reveal="right">
+    //     <p>this is some text</p>
+    //     <!-- can be <img> or <p> or any other elements -->
+    //     <!-- <div class="block" data-color="crimson"></div> -->
+    //     <div class="block" data-gradient="linear-gradient(to right, #6bd1bb, #44c7c5, #0bbccf, #00b0d7, #00a2da, #219ce1, #4195e6, #608ce7, #7f89ef, #a083f3, #c27af1, #e26fea)"></div>
+    // </div>
     display: inline-block;
     padding: $dist2;
     width: auto;
@@ -350,12 +356,6 @@ ul.scrollSpyList.fix{
         right: 0;
     }
 }
-// <div class="blockReveal" data-reveal="right">
-//     <p>this is some text</p>
-//     <!-- can be <img> or <p> or any other elements -->
-//     <!-- <div class="block" data-color="crimson"></div> -->
-//     <div class="block" data-gradient="linear-gradient(to right, #6bd1bb, #44c7c5, #0bbccf, #00b0d7, #00a2da, #219ce1, #4195e6, #608ce7, #7f89ef, #a083f3, #c27af1, #e26fea)"></div>
-// </div>
 .blockReveal.show{
     opacity: 1;
     visibility: visible;
@@ -389,6 +389,12 @@ ul.scrollSpyList.fix{
     .block.hide{transform: scaleY(0);}
 }
 .blockReveal2{
+    // <div class="blockReveal2" data-reveal="right">
+    //     <p class="content">this is some text</p>
+    //     <!-- can be <img> or <p> or any other elements -->
+    //     <!-- <div class="block" data-color="crimson"></div> -->
+    //     <div class="block" data-color="linear-gradient(to right, #6bd1bb, #44c7c5, #0bbccf, #00b0d7, #00a2da, #219ce1, #4195e6, #608ce7, #7f89ef, #a083f3, #c27af1, #e26fea)"></div>
+    // </div>
     display: inline-block;
     padding: $dist2;
     width: auto;
@@ -413,12 +419,6 @@ ul.scrollSpyList.fix{
         right: 0;
     }
 }
-// <div class="blockReveal2" data-reveal="right">
-//     <p class="content">this is some text</p>
-//     <!-- can be <img> or <p> or any other elements -->
-//     <!-- <div class="block" data-color="crimson"></div> -->
-//     <div class="block" data-color="linear-gradient(to right, #6bd1bb, #44c7c5, #0bbccf, #00b0d7, #00a2da, #219ce1, #4195e6, #608ce7, #7f89ef, #a083f3, #c27af1, #e26fea)"></div>
-// </div>
 .blockReveal2[data-reveal="right"]{
     .block{
         animation: blockReveal2Right ease-in-out forwards ;
@@ -507,11 +507,11 @@ ul.scrollSpyList.fix{
         }
     }
 }
-// <div class="example fadeEffect">
-//     ...
-//     <div class="fade bottom show"></div>
-// </div>
 .fadeEffect{
+    // <div class="example fadeEffect">
+    //     ...
+    //     <div class="fade bottom show"></div>
+    // </div>
     position: relative;
     overflow: hidden;
     .fade{position: absolute;}
@@ -548,29 +548,28 @@ ul.scrollSpyList.fix{
     p,i{font-size: $fontM - .2em;}
     p{margin-right: .3em;}
 }
-
-// <ul class="pagination">
-//     <li class="page-item disabled">
-//         <a href="#!" class="page-link">
-//             <i class="fas fa-angle-right"></i>    
-//         </a>
-//     </li>
-//     <li class="page-item active">
-//         <a href="#!" class="page-link">1</a>
-//     </li>
-//     <li class="page-item">
-//         <a href="#!" class="page-link">2</a>
-//     </li>
-//     <li class="page-item">
-//         <a href="#!" class="page-link">3</a>
-//     </li>
-//     <li class="page-item">
-//         <a href="#!" class="page-link"> 
-//             <i class="fas fa-angle-left"></i>    
-//         </a>
-//     </li>
-// </ul>
 .pagination{
+    // <ul class="pagination">
+    //     <li class="page-item disabled">
+    //         <a href="#!" class="page-link">
+    //             <i class="fas fa-angle-right"></i>    
+    //         </a>
+    //     </li>
+    //     <li class="page-item active">
+    //         <a href="#!" class="page-link">1</a>
+    //     </li>
+    //     <li class="page-item">
+    //         <a href="#!" class="page-link">2</a>
+    //     </li>
+    //     <li class="page-item">
+    //         <a href="#!" class="page-link">3</a>
+    //     </li>
+    //     <li class="page-item">
+    //         <a href="#!" class="page-link"> 
+    //             <i class="fas fa-angle-left"></i>    
+    //         </a>
+    //     </li>
+    // </ul>
     width: auto;
     height: auto;
     margin: $dist3 auto 0 auto;
@@ -610,23 +609,17 @@ ul.scrollSpyList.fix{
         background-color: $primaryColor;
     }
 }
-
-
-
-//price --------------------------------------------
-//price --------------------------------------------
-//price --------------------------------------------
-// <div class="priceWrapper">
-//     <h6>شروع قیمت از</h6>
-//     <div class="priceHelper">
-//         <div class="beforeDiscount">
-//             <p class="before">1000000تومان</p>
-//             <p class="discount">50%</p>
-//         </div>
-//         <p class="finalPrice">500000تومان</p>
-//     </div>
-// </div>
 .priceWrapper{
+    // <div class="priceWrapper">
+    //     <h6>شروع قیمت از</h6>
+    //     <div class="priceHelper">
+    //         <div class="beforeDiscount">
+    //             <p class="before">1000000تومان</p>
+    //             <p class="discount">50%</p>
+    //         </div>
+    //         <p class="finalPrice">500000تومان</p>
+    //     </div>
+    // </div>
     width: auto;
     height: auto;
     margin-top: $dist2;
@@ -672,18 +665,11 @@ ul.scrollSpyList.fix{
     }
     
 }
-//text effects--------------------------------------------
-//text effects--------------------------------------------
-//text effects--------------------------------------------
 .ellipse{
     white-space: nowrap ;
     overflow: hidden;
     text-overflow: ellipsis ;
 }
-
-//size and pos--------------------------------------------
-//size and pos--------------------------------------------
-//size and pos--------------------------------------------
 .fullSize{
     width: 100% ;
     height: 100%;
@@ -711,9 +697,6 @@ ul.scrollSpyList.fix{
     right: 50% ;
     transform: translate(50%,-50%) ;
 }
-//scroll arrows-------------------------------------------
-//scroll arrows-------------------------------------------
-//scroll arrows-------------------------------------------
 .scrollArrows{
     position: relative;
     .arrows{
@@ -741,57 +724,54 @@ ul.scrollSpyList.fix{
     }
     .arrows.show{display: flex ;}
 }
-//table-------------------------------------------
-//table-------------------------------------------
-//table-------------------------------------------
-// <table class="tableResp">
-//     <thead>
-//         <tr>
-//             <th class="col1 th clinic">
-//                 <h6>کلینیک</h6>
-//             </th>
-//             <th class="col2 th date">
-//                 <h6>تاریخ خرید</h6>
-//             </th>
-//             <th class="col3 th quantity">
-//                 <h6>تعداد</h6>
-//             </th>
-//             <th class="col4 th price">
-//                 <h6>قیمت نهایی</h6>
-//             </th>
-//             <th class="col5 th discount">
-//                 <h6>کد تخفیف</h6>
-//             </th>
-//             <th class="col6 th state">
-//                 <h6>وضعیت</h6>
-//             </th>
-//         </tr>
-//     </thead>
-//     <tbody>
-//         <tr>
-//             <td class="col1 td clinic">
-//                 <a href="medic.html">نام کلینیک</a>
-//             </td>
-//             <td class="col2 td date">
-//                 <p>1398/11/11</p>
-//             </td>
-//             <td class="col3 td quantity">
-//                 <p>2</p>
-//             </td>
-//             <td class="col4 td price">
-//                 <p>1.000.000تومان</p>
-//                 <p> (قیمت واحد ۵۰۰.۰۰۰ تومان) </p >
-//             </td>
-//             <td class="col5 td discount">
-//                 <p>12345678</p>
-//             </td>
-//             <td class="col6 td state">
-//                 <p class="state process">در حال پردازش</p>
-//             </td>
-//         </tr>
-//     </tbody>
-// </table>
 table.tableResp{
+    // <table class="tableResp">
+    //     <thead>
+    //         <tr>
+    //             <th class="col1 th clinic">
+    //                 <h6>کلینیک</h6>
+    //             </th>
+    //             <th class="col2 th date">
+    //                 <h6>تاریخ خرید</h6>
+    //             </th>
+    //             <th class="col3 th quantity">
+    //                 <h6>تعداد</h6>
+    //             </th>
+    //             <th class="col4 th price">
+    //                 <h6>قیمت نهایی</h6>
+    //             </th>
+    //             <th class="col5 th discount">
+    //                 <h6>کد تخفیف</h6>
+    //             </th>
+    //             <th class="col6 th state">
+    //                 <h6>وضعیت</h6>
+    //             </th>
+    //         </tr>
+    //     </thead>
+    //     <tbody>
+    //         <tr>
+    //             <td class="col1 td clinic">
+    //                 <a href="medic.html">نام کلینیک</a>
+    //             </td>
+    //             <td class="col2 td date">
+    //                 <p>1398/11/11</p>
+    //             </td>
+    //             <td class="col3 td quantity">
+    //                 <p>2</p>
+    //             </td>
+    //             <td class="col4 td price">
+    //                 <p>1.000.000تومان</p>
+    //                 <p> (قیمت واحد ۵۰۰.۰۰۰ تومان) </p >
+    //             </td>
+    //             <td class="col5 td discount">
+    //                 <p>12345678</p>
+    //             </td>
+    //             <td class="col6 td state">
+    //                 <p class="state process">در حال پردازش</p>
+    //             </td>
+    //         </tr>
+    //     </tbody>
+    // </table>
     width: 100%;
     height: auto;
     margin-top: $dist2;
@@ -883,13 +863,9 @@ table.tableResp{
 //         }
 //     }
 // }
-//others-------------------------------------------
-//others-------------------------------------------
-//others-------------------------------------------
 // @include hiddenShow('.modal') ;
 .collapseTrigger{cursor: pointer;}
-// we should not use height:auto .collapse again in other files
-.collapse{
+.collapse{ // we should not use height:auto .collapse again in other files
     overflow: hidden;
     height: auto;
 }

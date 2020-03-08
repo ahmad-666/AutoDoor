@@ -72,17 +72,22 @@
                     opacity: 0;
                     visibility: hidden;
                     transition: all .2s linear;
-                    width: 30em;
+                    width: 40em;
                     height: auto;
                     background-color: $iceColor;
                     box-shadow: -.2em 0 1em .1em $shadowColor;
                     position: absolute;
                     top: 0%;
                     right: 101%;
+                    display: flex;
+                    padding: 0;
+                    @include flex(row,flex-start,center,wrap,flex-start) ;
                     a{
+                        width: calc((100% - (2 * 1.5em)) / 2);
+                        height: auto;
                         color: inherit;
                         font-size: $fontM;
-                        margin: $dist2;
+                        margin: .4em;
                     }
                 }
             }
