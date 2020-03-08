@@ -17,4 +17,5 @@
 	npm i html-loader file-loader --save-dev 
 	npm i html-webpack-plugin mini-css-extract-plugin clean-webpack-plugin copy-webpack-plugin --save-dev
 	npm i @fortawesome/fontawesome-free animejs gh-pages fontfaceobserver nouislider wnumb jquery select2
+	npm i gh-pages 
 -should change webpack config to match current entry points.
