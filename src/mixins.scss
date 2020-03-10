@@ -10,6 +10,18 @@
     background: url($url) $pos $repeat ;
     background-size: $size ;
 }
+@mixin glow($type,$color){ 
+    // @include glow('m',#303f9f ) ;
+    @if $type == l {
+        box-shadow: 0 0 4em .2em $color;
+    }
+    @else if $type == m {
+        box-shadow: 0 0 2em .05em $color;
+    }
+    @else if $type == s {
+        box-shadow: 0 0 1em 0em $color;
+    }
+}
 @mixin multiEllipse($lineNum,$lineHeight,$ellipseColor){
     // <h6>
 	//    <span class="ellipse" data-align="right">...</span>
@@ -183,15 +195,10 @@
     }
 }
 // @include resizeTablet('#container') ;
-//@include resizeTablet('#container .child') ;
-//@include resizeTablet('#container'+' .child') ;
-// @include resizeTablet('#container') {
-//     .something{color: red ;}
-// }
-// @include mediaQ-w(300px){
-//     #wrapper{
-//         width: 90% ;
-//     }
+// @include resizeTablet('#container .child') ;
+// @include resizeTablet('#container'+' .child') ;
+// @include resizeTablet('#container') {.something{color: red ;}}
+// @include mediaQ-w(300px){#wrapper{width: 90% ;}
 // }
 @mixin resizeTablet($wrapper){
     @media screen and (max-width:1000px){
@@ -218,9 +225,6 @@
 @mixin mediaQ-wh($maxWidth,$maxHeight) {
     @media screen and (max-width: $maxWidth) and (max-height: $maxHeight){@content ;}
 }
-//for ::before,::after we cant add css classes so we need to use mixins for them
-//for times we want to change style for media queries using mixins is better than classes
-//for times we want to change style for pseudo classes(:hover,...) using mixins is better than classes
 @mixin fullSize{
     width: 100% ;
     height: 100%;
