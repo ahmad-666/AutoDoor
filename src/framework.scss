@@ -96,9 +96,91 @@
     font-weight: 700;
     color: $primaryColor;
 }
-.boxShadowL{box-shadow: 0 0 2em .5em $shadowColor;}
-.boxShadowM{box-shadow: 0 0 1em .1em $shadowColor;}
-.boxShadowS{box-shadow: 0 0 .5em .05em $shadowColor;} 
+// create $shadowColor is wrong and each time we need different color
+// for create bellow-middle shadow we cant use one class and each time we need
+// to use different box-shadow : box-shadow: 0px 11em 2em -10.5em rgba(0,0,0,0.5);
+.shadowL{box-shadow: 0 0 3em 0 rgba(0,0,0,.4);}
+.shadowM{box-shadow: 0 0 1.5em 0 rgba(0,0,0,.3);}
+.shadowS{box-shadow: 0 0 1em 0 rgba(0,0,0,.2);} 
+.shadowBellowM{box-shadow: 0 3em 2em -2em rgba(0,0,0,.35);}
+.shadowBellowS{box-shadow: 0 1em 1em -.5em rgba(0,0,0,.4);}
+.shadowMiddleM{ //bottom middle
+    position: relative;
+    overflow: visible;
+    &::before{
+        content: '';
+        width: 60%;
+        height: 50%;
+        z-index: -1;
+        position: absolute;
+        right: 50%;
+        bottom: 0;
+        transform: translate(50%,1em);
+        background-color: rgba(0,0,0,.3);
+        filter: blur(1em);
+    }
+}
+.shadowMiddleS{ //bottom middle
+    position: relative;
+    overflow: visible;
+    &::before{
+        content: '';
+        width: 60%;
+        height: 50%;
+        z-index: -1;
+        position: absolute;
+        right: 50%;
+        bottom: 0;
+        transform: translate(50%,.7em);
+        background-color: rgba(0,0,0,.25);
+        filter: blur(.8em);
+    }
+}
+.shadowMix{//top-right and bottom-left
+    position: relative;
+    overflow: visible;
+    &::before,&::after{
+        content: '' ;
+        width: 50%;
+        height: 50%;
+        position: absolute;
+        z-index: -1;
+        background-color: rgba(0,0,0,.3);
+        filter: blur(2em);
+    }
+    &::before{
+        top: 0;
+        right: 0;
+        transform: translate(.5em,-.5em);
+    }
+    &::after{
+        bottom: 0;
+        left: 0;
+        transform: translate(-.5em,.5em);
+    }
+}
+.shadowSpecial1{ //bottom-right and bottom-left
+    overflow: visible;
+    position: relative;
+    &::before,&::after{
+        content: '';
+        width: 30%;
+        height: 15%;
+        position: absolute;
+        bottom: 0;
+        filter: blur(1.2em);
+        background-color: rgba(0,0,0,.4);
+        z-index: -1 ;
+    }
+    &::before{
+        right: 0;
+        transform: translate(-1em,0em) rotate(6deg);
+    }
+    &::after{
+        left: 0;
+        transform: translate(1em,0em) rotate(-6deg);
+    }
+}
 .withIcon{
     // <div class="withIcon">
     //     <i class="fas fa-building"></i>
