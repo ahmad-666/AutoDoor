@@ -10,17 +10,29 @@
     background: url($url) $pos $repeat ;
     background-size: $size ;
 }
-@mixin glow($type,$color){ 
+@mixin glow($size,$color){ 
     // @include glow('m',#303f9f ) ;
-    @if $type == l {
-        box-shadow: 0 0 4em .2em $color;
-    }
-    @else if $type == m {
-        box-shadow: 0 0 2em .05em $color;
-    }
-    @else if $type == s {
+    @if $size == s {
         box-shadow: 0 0 1em 0em $color;
     }
+    @else if $size == m {
+        box-shadow: 0 0 2em .05em $color;
+    }
+    @else if $size == l {
+        box-shadow: 0 0 4em .2em $color;
+    }
+}
+@mixin shadow($size,$color){
+    // @include shadow('m',#303f9f ) ;
+    @if $size == s {
+        box-shadow: 0 .5em .6em -.2em $color;
+    }
+    @else if $size == m {
+        box-shadow: 0 1.5em 1em -.75em $color;
+    }
+    @else if $size == l {
+        box-shadow: 0 1em 2.2em 0em $color;
+}
 }
 @mixin multiEllipse($lineNum,$lineHeight,$ellipseColor){
     // <h6>

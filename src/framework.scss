@@ -96,91 +96,264 @@
     font-weight: 700;
     color: $primaryColor;
 }
-// create $shadowColor is wrong and each time we need different color
-// for create bellow-middle shadow we cant use one class and each time we need
-// to use different box-shadow : box-shadow: 0px 11em 2em -10.5em rgba(0,0,0,0.5);
-.shadowL{box-shadow: 0 0 3em 0 rgba(0,0,0,.4);}
-.shadowM{box-shadow: 0 0 1.5em 0 rgba(0,0,0,.3);}
-.shadowS{box-shadow: 0 0 1em 0 rgba(0,0,0,.2);} 
-.shadowBellowM{box-shadow: 0 3em 2em -2em rgba(0,0,0,.35);}
-.shadowBellowS{box-shadow: 0 1em 1em -.5em rgba(0,0,0,.4);}
-.shadow3Dir{box-shadow: 0 .5em 1em .1em rgba(0,0,0,.4);}
-.shadowMiddleM{ //bottom middle
+//***in many cases we should not use bellow classes and we should write our own shadow 
+//and need to change blur/color,size,...
+//***For have better shadow : 
+//for normal shadow : 
+//background-color of element should be different from background-color of its parent 
+//shadow color should be different from background-color of its parent 
+//for neumorph shadow(or any inset) : 
+//background-color of target <div> should be same as its parent or near it 
+//color of shadow should be different from parent
+//for blur shadow of buttons :
+//shadow color should be same as background-color of element
+.shadowS{box-shadow: 0 0 .5em .1em $shadowLight ;} //full shadow
+.shadowM{box-shadow: 0 0 .5em .3em $shadowLight ;} //full shadow
+.shadowL{box-shadow: 0 0 1.5em .75em $shadowLight ;} //full shadow
+.shadowInsetS{ //full shadow
+    background-color: inherit;
+    box-shadow: 0 0 .5em .1em $shadowLight inset;} 
+.shadowInsetM{  //full shadow
+    background-color: inherit;
+    box-shadow: 0 0 .5em .3em $shadowLight inset;}
+.shadowInsetL{ //full shadow
+    background-color: inherit;
+    box-shadow: 0 0 1.5em .75em $shadowLight inset;} 
+.shadowBellowS{box-shadow: 0 .3em 1.5em .2em $shadowMid;} //right-left-bottom shadow
+.shadowBellowL{box-shadow: 0 1em 2em .5em $shadowMid;} //right-left-bottom shadow
+.shadowMiddleS{ //middle of bottom shadow
     position: relative;
     overflow: visible;
     &::before{
         content: '';
-        width: 60%;
-        height: 50%;
         z-index: -1;
+        width: 75%;
+        height: 100%;
         position: absolute;
-        right: 50%;
         bottom: 0;
-        transform: translate(50%,1em);
-        background-color: rgba(0,0,0,.3);
-        filter: blur(1em);
+        right: 50%;
+        transform: translate(50%,.2em);
+        background-color: $shadowMid;
+        filter: blur(.5em);
     }
 }
-.shadowMiddleS{ //bottom middle
+.shadowMiddleM{ //middle of bottom shadow
     position: relative;
     overflow: visible;
     &::before{
         content: '';
-        width: 60%;
-        height: 50%;
         z-index: -1;
+        width: 75%;
+        height: 100%;
         position: absolute;
-        right: 50%;
         bottom: 0;
-        transform: translate(50%,.7em);
-        background-color: rgba(0,0,0,.25);
-        filter: blur(.8em);
+        right: 50%;
+        transform: translate(50%,.75em);
+        background-color: $shadowMid;
+        filter: blur(1.2em);
     }
 }
-.shadowMix{//top-right and bottom-left
+.shadowMiddleL{ //middle of bottom shadow
     position: relative;
     overflow: visible;
-    &::before,&::after{
-        content: '' ;
-        width: 50%;
-        height: 50%;
-        position: absolute;
+    &::before{
+        content: '';
         z-index: -1;
-        background-color: rgba(0,0,0,.3);
+        width: 90%;
+        height: 100%;
+        position: absolute;
+        bottom: 0;
+        right: 50%;
+        transform: translate(50%,1.5em);
+        background-color: $shadowMid;
         filter: blur(2em);
     }
-    &::before{
-        top: 0;
-        right: 0;
-        transform: translate(.5em,-.5em);
-    }
-    &::after{
-        bottom: 0;
-        left: 0;
-        transform: translate(-.5em,.5em);
-    }
 }
-.shadowSpecial1{ //bottom-right and bottom-left
-    overflow: visible;
+.shadowLeftBottomS{box-shadow: -.3em .3em 1.2em 0 $shadowMid;} //left-bottom shadow
+.shadowLeftBottomL{box-shadow: -1.2em 1.2em 2.5em 0 $shadowMid;} //left-bottom shadow
+.shadowSkewRightS{ //bottom-right edge shadow
     position: relative;
-    &::before,&::after{
+    overflow: visible;
+    &::before{
         content: '';
-        width: 30%;
-        height: 15%;
+        width: 20%;
+        height: 50%;
         position: absolute;
         bottom: 0;
-        filter: blur(1.2em);
-        background-color: rgba(0,0,0,.4);
-        z-index: -1 ;
+        right: 0;
+        background-color: $shadowMid;
+        filter: blur(1em);
+        transform-origin: left center;
+        transform: skewY(4deg);
+        z-index: -1;
+        border-radius: 3em;
+    }
+}
+.shadowSkewRightL{ //bottom-right edge shadow
+    position: relative;
+    overflow: visible;
+    &::before{
+        content: '';
+        width: 40%;
+        height: 50%;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background-color: $shadowMid;
+        filter: blur(.75em);
+        transform-origin: left center;
+        transform: skewY(3deg);
+        z-index: -1;
+        border-radius: 3em;
+    }
+}
+.shadowSkewLeftS{ //bottom-left edge shadow
+    position: relative;
+    overflow: visible;
+    &::before{
+        content: '';
+        width: 20%;
+        height: 50%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: $shadowMid;
+        filter: blur(1em);
+        transform-origin: right center;
+        transform: skewY(-4deg);
+        z-index: -1;
+        border-radius: 3em;
+    }
+}
+.shadowSkewLeftL{ //bottom-left edge shadow
+    position: relative;
+    overflow: visible;
+    &::before{
+        content: '';
+        width: 40%;
+        height: 50%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: $shadowMid;
+        filter: blur(.75em);
+        transform-origin: right center;
+        transform: skewY(-3deg);
+        z-index: -1;
+        border-radius: 3em;
+    }
+}
+.shadowSkewS{ //bottom-right/bottom-left edge shadow
+    position: relative;
+    overflow: visible;
+    &::before,&::after{
+        content: '';
+        width: 20%;
+        height: 50%;
+        position: absolute;
+        bottom: 0;
+        background-color: $shadowMid;
+        filter: blur(1em);
+        z-index: -1;
+        border-radius: 3em;
     }
     &::before{
         right: 0;
-        transform: translate(-1em,0em) rotate(6deg);
+        transform-origin: left center;
+        transform: skewY(4deg);
     }
     &::after{
         left: 0;
-        transform: translate(1em,0em) rotate(-6deg);
+        transform-origin: right center;
+        transform: skewY(-4deg);
     }
+}
+.shadowSkewL{ //bottom-right/bottom-left edge shadow
+    position: relative;
+    overflow: visible;
+    &::before,&::after{
+        content: '';
+        width: 40%;
+        height: 50%;
+        position: absolute;
+        bottom: 0;
+        background-color: $shadowMid;
+        filter: blur(.75em);
+        z-index: -1;
+        border-radius: 3em;
+    }
+    &::before{
+        right: 0;
+        transform-origin: left center;
+        transform: skewY(3deg);
+    }
+    &::after{
+        left: 0;
+        transform-origin: right center;
+        transform: skewY(-3deg);
+    }
+}
+// .containerBoxM{background-color: lighten($primaryColor,30%); color: white !important;}
+.shadowOutside{ //outside bellow shadow
+    position: relative;
+    overflow: visible;
+    margin-bottom: 15em;
+    &::before{
+        content: '';
+        width: 75%;
+        height: 5em;
+        background-color: $shadowMid;
+        filter: blur(1.5em);
+        position: absolute;
+        bottom: -10em;
+        right: 50%;
+        transform: translateX(50%);
+        border-radius: 50%;
+    }
+}
+.neumorphS{ //two shadows ... dark on right-bottom ... light of left-top 
+    background-color: initial; 
+    box-shadow: .5em .5em .5em 0 $shadowMid , 
+                -.3em -.3em .3em 0 $shadowWhite;
+}
+.neumorphM{ //two shadows ... dark on right-bottom ... light of left-top
+    background-color: inherit; 
+    box-shadow: 1em 1em 1em 0 $shadowMid ,
+                -.5em -.5em .75em 0 $shadowWhite;
+}
+.neumorphL{ //two shadows ... dark on right-bottom ... light of left-top
+    background-color: inherit; 
+    box-shadow: 1.5em 1.5em 1.5em 0 $shadowMid , 
+                -.8em -.8em  1.2em 0 $shadowWhite;
+}
+.neumorphInsetS{ //two inset shadows ... dark on right-bottom ... light of left-top
+    background-color: initial; 
+    box-shadow: .5em .5em .5em 0 $shadowMid inset,
+                -.3em -.3em .3em 0 $shadowWhite inset;
+}
+.neumorphInsetM{ //two inset shadows ... dark on right-bottom ... light of left-top
+    background-color: inherit; 
+    box-shadow: 1em 1em 1em 0 $shadowMid inset,
+                -.5em -.5em .75em 0 $shadowWhite inset;
+}
+.neumorphInsetL{ //two inset shadows ... dark on right-bottom ... light of left-top
+    background-color: inherit; 
+    box-shadow: 1.5em 1.5em 1.5em 0 $shadowMid inset, 
+                -.8em -.8em  1.2em 0 $shadowWhite inset;
+}
+.neumorphFullS{ //4 shadows ... two outside and two inset
+    background-color: initial; 
+    box-shadow: .3em .3em .3em 0 $shadowMid , 
+                -.15em -.15em .15em 0 $shadowWhite ,
+                .3em .3em .3em 0 $shadowMid inset,
+                -.15em -.15em .15em 0 $shadowWhite inset;
+}
+.neumorphFullL{ //4 shadows ... two outside and two inset
+    background-color: inherit; 
+    box-shadow: 1em 1em 1em 0 $shadowMid ,
+                -.4em -.4em .6em 0 $shadowWhite,
+                .6em .6em .6em 0 $shadowMid inset,
+                -.4em -.4em .4em 0 $shadowWhite inset;
 }
 .withIcon{
     // <div class="withIcon">
